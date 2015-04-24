@@ -1,8 +1,7 @@
 Test case id:		1
-Test subcase id: 	a
 Unit to test:		Create account
 Priority:		
-Initial state:		"Username" is unique, "Password" is good
+Assumptions:		"Username" is unique, "Password" is good
 Test data:		
 Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
 			2) Click top-right "Create account"
@@ -17,18 +16,17 @@ Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
 Expected result:	User creation confirmed and automatic login 
 Actual result:		Account creation error / Cannot create account: The requested username is already taken by a user on another wiki. 
 Pass/Fail:		FAIL
-Comment:		The account creation failed as the desired username was taken already.
+Comment:		
 
 
-Test case id:		1
-Test subcase id:	b
+Test case id:		2
 Unit to test:		Create account
 Priority:		
-Initial state:		"Username" is unique, "Password" is good
+Assumptions:		"Username" is unique, "Password" is good
 Test data:		
 Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
 			2) Click top-right "Create account"
-			3) Fill "Username" field: husven_test3
+			3) Fill "Username" field: husven_test2
 			4) Fill "Password" field: 123Project2
 			5) Fill "Confirm password" field: same input as in 4)
 			6) Fill "Email address" field: (empty)
@@ -37,7 +35,7 @@ Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
 
 
 Expected result:	User creation confirmed and automatic login 
-Actual result:		Account created and redirect to main page logged in with pop-up «Help Improve Wikipedia» 
+Actual result:		Account created and redirect to main page logged in with pop-up "Improve Wikipedia survey" 
 Pass/Fail:		PASS
-Comment:		All good.
+Comment:		
 

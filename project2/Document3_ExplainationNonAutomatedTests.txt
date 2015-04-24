@@ -1,0 +1,12 @@
+﻿Document 3
+
+Manuel tests that could not be automated
+———
+
+CreateAccount:
+
+The value of id=wpName2 is «husven_test3», but since we already created this user in the manual test, this username is not unique. One could of course change this value to something unique, but the automated test would still fail because the value of id=wpCatchaWord is «aryanbusy» which is probably not the answer to the captcha given.
+
+One could probably make a automated test that copied the source of the captcha image, made use of an online decaptcha service, copied the captcha word and pasted it into id=wpCaptchaWord, but we did not find such a service available freely.
+
+The test 

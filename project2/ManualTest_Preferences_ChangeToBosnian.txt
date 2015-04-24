@@ -1,0 +1,21 @@
+﻿Test case id:		3
+Test subcase id:	a
+Unit to test:		Preferences: Change interface language from English to Bosnian
+Priority:		
+Initial state:		Main page loaded, user not logged in
+Test data:		
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right «Login»
+			3) Fill "Username" field: husven_test3
+			4) Fill "Password" field: 123Project2
+			5) Click «Login» button
+			6) Click top-right «Preferences» button
+			7) Select «bs - bosanski» under Internationalisation > Language
+			8) Click «Save» button on bottom of page
+			9) Verify that you get the confirmation message «Vaše postavke su sačuvane.»
+
+
+Expected result:	Interface language changed from English to Bosnian
+Actual result:		Interface language changed from English to Bosnian
+Pass/Fail:			PASS
+Comment:			All good.
