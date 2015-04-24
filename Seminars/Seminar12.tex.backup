@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper,norsk]{article}
+
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{framed}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\providecommand{\shadedwbar}{}
+\definecolor{shadecolor}{rgb}{0.87843, 0.95686, 1.0}
+\renewenvironment{shadedwbar}{
+\def\FrameCommand{\color[rgb]{0.7,     0.95686, 1}\vrule width 1mm\normalcolor\colorbox{shadecolor}}\FrameRule0.6pt
+\MakeFramed {\advance\hsize-2mm\FrameRestore}\vskip3mm}{\vskip0mm\endMakeFramed}
+\providecommand{\shadedquoteBlueBar}{}
+\renewenvironment{shadedquoteBlueBar}[1][]{
+\bgroup\rmfamily
+\fboxsep=0mm\relax
+\begin{shadedwbar}
+\list{}{\parsep=-2mm\parskip=0mm\topsep=0pt\leftmargin=2mm
+\rightmargin=2\leftmargin\leftmargin=4pt\relax}
+\item\relax}
+{\endlist\end{shadedwbar}\egroup}
+
+
+\title{Seminar 9 for Lecture 8}
+\author{ }
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\section{Question 1:}
+
+What kind of interface can be used to automate tests?
+
+\begin{itemize}
+ \item \textbf{a)} \textit{API}
+ \item \textbf{b)} \textit{GUI}
+ \item \textbf{c)} \textit{Both API and GUI}
+ \item \textbf{d)} \textit{None of the above}
+\end{itemize}
+
+
+\underline{\textbf{Answer: c}}. Both. (Ref. lecture 11, p. 6.)\\
+
+
+\noindent Comments:\\
+\framebox(450,100){}\\
+
+\section{Question 2:} Which of the following are advantages of test automation? \\
+
+\begin{itemize}
+ \item \textbf{a)} \textit{Tests run faster and can be more complex}
+ \item \textbf{b)} \textit{Tests are run by machines and the results are interpreted by humans}
+ \item \textbf{c)} \textit{Data sets used in testing can be very simple}
+ \item \textbf{d)} \textit{The results of running the tests is always the same}
+\end{itemize}
+
+\underline{\textbf{Answer: a}}. (Comments. b: There are also machine-interpretable results. c: not an advantage. d: makes little sense) \\
+
+
+\noindent Comments:\\
+\framebox(450,100){}\\
+
+\section {Question 3:} Which of the following are the four principles of accessible web-content?  \\
+
+\begin{itemize}
+ \item \textbf{a)} \textit{Security, interoperability, accuracy, maintainability.}
+ \item \textbf{b)} \textit{High-contrast, high-performance, responsiveness, accuracy.}
+ \item \textbf{c)} \textit{Easy to remember, easy to like, easy to modify, easy to maintain.}
+ \item \textbf{d)} \textit{Perceivable, operable, understandable, robust.}
+\end{itemize}
+
+\underline{\textbf{Answer: d}} Ref. recommendations in Web Content Accessibility Guidelines (WCAG) 2.0: «At the top are four principles that provide the foundation for web accessibility» \\
+
+\noindent Comments:\\
+\framebox(450,100){}\\
+
+\section {Question 4:} What does it mean that a user interface is operable?\\
+
+\begin{itemize}
+ \item \textbf{I)} \textit{All functionality is available from a keyboard.}
+ \item \textbf{II)} \textit{All user interface is navigable with a keyboard.}
+ \item \textbf{III)} \textit{All functionality can be operated by the same person.}
+\end{itemize}
+
+\underline{\textbf{Answer: a: I and II}} Ref. p. 25, Lecture 8: Operable - User interface components and navigation must be operable.\\
+
+\noindent Comments:\\
+\framebox(450,100){}\\
+
+\section {Question 5: Open-end question} Compare the keyboard accessibility for the following websites:
+\url{http://www.google.com}; \url{http://www.bing.com} \\
+
+\noindent Comments:\\
+\framebox(450,100){}\\
+
+\section {Question 6: Open-end question} Which do you think it’s the easiest to forget about?
+
+\begin{itemize}
+ \item Non-English speaker
+ \item Deaf-mute
+ \item Blind
+ \item ARMG (age-related macular degeneration)
+\end{itemize}
+
+Wolfram-Alpha query 'English total number of speakers' 760 millions (guesstimate) \\
+\url{http://en.wikipedia.org/wiki/Languages_used_on_the_Internet}: Top 10 million websites, 55 pst in English \\
+Estimates of number of Internet users by language as of 31 May 2011: No 1: 27 pst English, No 2: 25 pst Chinese, No 3: 8 pst Spanish, ..., 11-36: 17 pst others
+
+
+\noindent Comments:\\
+\framebox(450,100){}\\
+
+\end{document}

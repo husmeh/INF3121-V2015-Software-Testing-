@@ -1,0 +1,41 @@
+Test case id:		1
+Unit to test:		Create account
+Priority:		
+Assumptions:		"Username" is unique, "Password" is good
+Test data:		
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Create account"
+			3) Fill "Username" field: husven
+			4) Fill "Password" field: 123Project2
+			5) Fill "Confirm password" field: same input as in 4)
+			6) Fill "Email address" field: (empty)
+			7) Interpret captcha and fill "Security check" field accordingly
+			8) Click "Create your account" button
+
+
+Expected result:	User creation confirmed and automatic login 
+Actual result:		Account creation error / Cannot create account: The requested username is already taken by a user on another wiki. 
+Pass/Fail:		FAIL
+Comment:		
+
+
+Test case id:		2
+Unit to test:		Create account
+Priority:		
+Assumptions:		"Username" is unique, "Password" is good
+Test data:		
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Create account"
+			3) Fill "Username" field: husven_test2
+			4) Fill "Password" field: 123Project2
+			5) Fill "Confirm password" field: same input as in 4)
+			6) Fill "Email address" field: (empty)
+			7) Interpret captcha and fill "Security check" field accordingly
+			8) Click "Create your account" button
+
+
+Expected result:	User creation confirmed and automatic login 
+Actual result:		Account created and redirect to main page logged in with pop-up "Improve Wikipedia survey" 
+Pass/Fail:		PASS
+Comment:		
+
