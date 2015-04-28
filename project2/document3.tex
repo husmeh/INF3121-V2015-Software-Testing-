@@ -1,9 +1,29 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
 
+\usepackage[T1]{fontenc}
+\usepackage{color}
+
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
+
+% Hyperlinks in PDF: \href{url}{linktext}
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage[%
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+]{hyperref}
+
 %opening
-\title{Assignment 2, Document 3 \\ Manual Tests That Could Not Be Automated}
-\author{Even Langfeldt Friberg \and Husein Mehmedagic}
+\title{INF3121 Assignment 2, Document 3 \\ Manual Tests That Could Not Be Automated}
+
+\author{
+Even Langfeldt Friberg\footnote{\href{mailto:evenlf@student.matnat.uio.no}{\nolinkurl{evenlf@student.matnat.uio.no}}.}
+\and Husein Mehmedagic\footnote{\href{mailto:huseinm@student.matnat.uio.no}{\nolinkurl{huseinm@student.matnat.uio.no}}.}
+}
 
 \begin{document}
 
