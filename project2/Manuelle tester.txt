@@ -1,0 +1,211 @@
+Test case id:		1
+Test subcase id: 	a
+Unit to test:		Create account
+Priority:		
+Initial state:		"Username" is unique, "Password" is good
+Test data:		
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Create account"
+			3) Fill "Username" field: husven
+			4) Fill "Password" field: 123Project2
+			5) Fill "Confirm password" field: same input as in 4)
+			6) Fill "Email address" field: (empty)
+			7) Interpret captcha and fill "Security check" field accordingly
+			8) Click "Create your account" button
+
+
+Expected result:	User creation confirmed and automatic login 
+Actual result:		Account creation error / Cannot create account: The requested username is already taken by a user on another wiki. 
+Pass/Fail:		FAIL
+Comment:		The account creation failed as the desired username was taken already.
+
+
+Test case id:		1
+Test subcase id:	b
+Unit to test:		Create account
+Priority:		
+Initial state:		"Username" is unique, "Password" is good
+Test data:		
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Create account"
+			3) Fill "Username" field: husven_test3
+			4) Fill "Password" field: 123Project2
+			5) Fill "Confirm password" field: same input as in 4)
+			6) Fill "Email address" field: (empty)
+			7) Interpret captcha and fill "Security check" field accordingly
+			8) Click "Create your account" button
+
+
+Expected result:	User creation confirmed and automatic login 
+Actual result:		Account created and redirect to main page logged in with pop-up «Help Improve Wikipedia» 
+Pass/Fail:		PASS
+Comment:		All good.
+
+###
+
+Test case id:		2
+Test subcase id: 	a
+Unit to test:		Login
+Priority:		High
+Initial state:		Main page loaded, user not logged in
+Test data:		username = husven_test3; password = *INVALID*
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Login"
+			3) Fill "Username" field
+			4) Fill "Password" field
+			5) Leave unchecked "Keep me logged in" checkbox
+			6) Click "Login" button
+
+
+Expected result:	Login fail and keep user on login page 
+Actual result:		Login fail and keep user on login page
+Pass/Fail:		PASS
+Description:		The correct username and the wrong password is supplied. This would keep the user on a special page (login page) of Wikipedia.
+
+Test case id:		2
+Test subcase id: 	b
+Unit to test:		Login
+Priority:		High
+Initial state:		Main page loaded, user not logged in
+Test data:		username = husven_test3; password = 123Project2
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Login"
+			3) Fill "Username" field
+			4) Fill "Password" field
+			5) Leave unchecked "Keep me logged in" checkbox
+			6) Click "Login" button
+
+
+Expected result:	Login ok and redirect to main page 
+Actual result:		Login ok and redirect to main page
+Pass/Fail:		PASS
+Description:		The correct username and the correct password is supplied. This should take the user to the main page of Wikipedia.
+
+
+
+
+
+###
+
+
+﻿Test case id:		3
+Test subcase id:	a
+Unit to test:		Preferences: Change interface language from English to Norwegian
+Priority:		Medium
+Initial state:		Main page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Click top-right «Preferences» button
+			2) Select «nb - norsk bokmål» under Internationalisation > Language
+			3) Click «Save» button on bottom of page
+			4) Verify that you get the confirmation message «Innstillingene ble lagret.»
+
+
+Expected result:	Interface language changed from English to Norwegian
+Actual result:		Interface language changed from English to Norwegian
+Pass/Fail:		PASS
+Comment:		All good.
+
+Test case id:		3
+Test subcase id:	b
+Unit to test:		Preferences: Change interface language from Norwegian to English
+Priority:		Medium
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Select «en - English» under Internasjonalisering > Språk
+			2) Click «Lagre» button on bottom of page
+			3) Verify that you get the confirmation message «Your preferences have been saved.»
+
+
+Expected result:	Interface language changed from Norwegian to English
+Actual result:		Interface language changed from Norwegian to English
+Pass/Fail:		PASS
+Comment:		All good.
+
+
+Test case id: 		3
+Test subcase id: 	c
+Unit to test:		Preferences: Change appearance of math from PNG-image to tex
+Priority:		Low
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Select «TeX source (for text browsers)» under Appearence > Math
+			2) Click «Save» button on bottom of page
+			3) Verify that you get the confirmation message «Your preferences have been saved.»
+			4) Search for "Newton's laws of motion" under the top-right search field and press Enter.
+			5) Verify that "$ \\sum {\\mathbf {F}}=0\\;\\Leftrightarrow \\;{\\frac {{\\mathrm {d}}{\\mathbf {v}}}{{\\mathrm {d}}t}}=0. $" can be found in the text (under second paragraph of chapter "Newton's first law").
+Expected result:	Math mode changed from PNG to tex
+Actual result:		Math mode changed from PNG to tex
+Pass/Fail:		PASS
+Comment:		All good.
+
+
+Test case id: 		3
+Test subcase id: 	d
+Unit to test:		Preferences: Change date format from default to ISO 8601
+Priority:		Low
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Click "Appearence" tab
+			2) Choose last radio box option under "Date format"
+			3) Click "Save" on bottom of page
+			4) Verify that "Your preferences have been saved" shows on page
+			5) Go to "User profile" tab
+			6) Verify that "Registration time" under "Basic information" says "2015-04-24T12:52:51"
+Expected result:	Date/time format changed into ISO 8601 standard
+Actual result:		Date/time format changed into ISO 8601 standard
+Pass/Fail:		PASS
+Comment:		All good.
+
+
+Test case id: 		3
+Test subcase id: 	e
+Unit to test:		Preferences: Provide an email address
+Priority:		Low
+Initial state:		Preferences page loaded, user logged in, email not provided
+Test data:		email, password
+Steps to be executed:	1) Click "User profile" tab
+			2) Click "Set an email address" under "Email options"
+			3) Enter email address in "New email address" field
+			4) Enter password in "Your Wikipedia password" field
+			5) Click "Change email" button
+			6) Verify that "A confirmation email has been sent to the specified email address." says on the screen
+Expected result:	Message that confirmation email has been sent appears
+Actual result:		Message that confirmation email has been sent appears
+Pass/Fail:		PASS
+Comment:		All good.
+
+Test case id: 		3
+Test subcase id: 	f
+Unit to test:		Preferences: Change password
+Priority:		High
+Initial state:		Preferences page loaded, user logged in
+Test data:		email, old password, new password
+Steps to be executed:	1) Click "User profile" tab
+			2) Click "Change password" under "Basic information"
+			3) Enter '123Project2' in old password field
+			4) Enter '123Project21' in new password field
+			5) Enter '123Project21' in reenter new password field
+			6) Click "Change password" button
+			7) Verify that message "Your password has been changed successfully!" appears
+Expected result:	Message that password has been changed
+Actual result:		Message that password has been changed
+Pass/Fail:		PASS
+Comment:		All good.
+
+
+###
+
+Test case id: 		4
+Test subcase id: 	a
+Unit to test:		Logout
+Priority:		High
+Initial state:		User logged in
+Test data:		
+Steps to be executed:	1) Click top-right "Log out" link
+			2) Verify that message "You are now logged out." appears
+Expected result:	Message that user has been logged out
+Actual result:		Message that user has been logged out
+Pass/Fail:		PASS
+Comment:		All good.
+
+
