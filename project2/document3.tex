@@ -1,0 +1,20 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{Assignment 2: Manual tests that could not be automated}
+\author{Even Langfeldt Friberg \and Husein Mehmedagic}
+
+\begin{document}
+
+\maketitle
+
+\section{CreateAccount}
+The value of \texttt{id=wpName2} is \textit{husven\_test3}, but since we already created this user in the manual test, this username is not unique. One could of course 
+change this value to something unique, but the automated test would still fail because the value of \texttt{id=wpCatchaWord} is \textit{aryanbusy} which is probably not 
+the answer to the captcha given.
+
+One could probably make an automated test that copied the source of the captcha image, made use of an online decaptcha service, copied the captcha word 
+and pasted it into \texttt{id=wpCaptchaWord}, but we did not find such a service available freely.
+
+\end{document}
