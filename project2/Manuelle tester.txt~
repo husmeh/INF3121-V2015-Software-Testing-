@@ -1,0 +1,142 @@
+Test case id:		1
+Test subcase id: 	a
+Unit to test:		Create account
+Priority:		
+Initial state:		"Username" is unique, "Password" is good
+Test data:		
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Create account"
+			3) Fill "Username" field: husven
+			4) Fill "Password" field: 123Project2
+			5) Fill "Confirm password" field: same input as in 4)
+			6) Fill "Email address" field: (empty)
+			7) Interpret captcha and fill "Security check" field accordingly
+			8) Click "Create your account" button
+
+
+Expected result:	User creation confirmed and automatic login 
+Actual result:		Account creation error / Cannot create account: The requested username is already taken by a user on another wiki. 
+Pass/Fail:		FAIL
+Comment:		The account creation failed as the desired username was taken already.
+
+
+Test case id:		1
+Test subcase id:	b
+Unit to test:		Create account
+Priority:		
+Initial state:		"Username" is unique, "Password" is good
+Test data:		
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Create account"
+			3) Fill "Username" field: husven_test3
+			4) Fill "Password" field: 123Project2
+			5) Fill "Confirm password" field: same input as in 4)
+			6) Fill "Email address" field: (empty)
+			7) Interpret captcha and fill "Security check" field accordingly
+			8) Click "Create your account" button
+
+
+Expected result:	User creation confirmed and automatic login 
+Actual result:		Account created and redirect to main page logged in with pop-up «Help Improve Wikipedia» 
+Pass/Fail:		PASS
+Comment:		All good.
+
+###
+
+Test case id:		2
+Test subcase id: 	a
+Unit to test:		Login
+Priority:		High
+Initial state:		Main page loaded, user not logged in
+Test data:		username = husven_test3; password = *INVALID*
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Login"
+			3) Fill "Username" field
+			4) Fill "Password" field
+			5) Leave unchecked "Keep me logged in" checkbox
+			6) Click "Login" button
+
+
+Expected result:	Login fail and keep user on login page 
+Actual result:		Login fail and keep user on login page
+Pass/Fail:		PASS
+Description:		The correct username and the wrong password is supplied. This would keep the user on a special page (login page) of Wikipedia.
+
+Test case id:		2
+Test subcase id: 	b
+Unit to test:		Login
+Priority:		High
+Initial state:		Main page loaded, user not logged in
+Test data:		username = husven_test3; password = 123Project2
+Steps to be executed:	1) Go to en.wikipedia.org/wiki/Main_Page
+			2) Click top-right "Login"
+			3) Fill "Username" field
+			4) Fill "Password" field
+			5) Leave unchecked "Keep me logged in" checkbox
+			6) Click "Login" button
+
+
+Expected result:	Login ok and redirect to main page 
+Actual result:		Login ok and redirect to main page
+Pass/Fail:		PASS
+Description:		The correct username and the correct password is supplied. This should take the user to the main page of Wikipedia.
+
+
+
+
+
+###
+
+
+﻿Test case id:		3
+Test subcase id:	a
+Unit to test:		Preferences: Change interface language from English to Norwegian
+Priority:		Medium
+Initial state:		Main page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Click top-right «Preferences» button
+			2) Select «nb - norsk bokmål» under Internationalisation > Language
+			3) Click «Save» button on bottom of page
+			4) Verify that you get the confirmation message «Innstillingene ble lagret.»
+
+
+Expected result:	Interface language changed from English to Norwegian
+Actual result:		Interface language changed from English to Norwegian
+Pass/Fail:		PASS
+Comment:		All good.
+
+Test case id:		3
+Test subcase id:	b
+Unit to test:		Preferences: Change interface language from Norwegian to English
+Priority:		Medium
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Select «en - English» under Internasjonalisering > Språk
+			8) Click «Lagre» button on bottom of page
+			9) Verify that you get the confirmation message «Your preferences have been saved.»
+
+
+Expected result:	Interface language changed from Norwegian to English
+Actual result:		Interface language changed from Norwegian to English
+Pass/Fail:		PASS
+Comment:		All good.
+
+
+Test case id: 		3
+Test subcase id: 	c
+Unit to test:		Preferences: Change appearance of math from PNG-image to tex
+Priority:		Low
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Select «TeX source (for text browsers)» under Appearence > Math
+			2) Click «Save» button on bottom of page
+			3) Verify that you get the confirmation message «Your preferences have been saved.»
+			4) Search for "Newton's laws of motion" under the top-right search field and press Enter.
+			5) Verify that "$ \\sum {\\mathbf {F}}=0\\;\\Leftrightarrow \\;{\\frac {{\\mathrm {d}}{\\mathbf {v}}}{{\\mathrm {d}}t}}=0. $" can be found in the text (under second paragraph of chapter "Newton's first law").
+
+
+Expected result:	Math mode changed from PNG to tex
+Actual result:		Math mode changed from PNG to tex
+Pass/Fail:		PASS
+Comment:		All good.
+
