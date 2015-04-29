@@ -18,7 +18,7 @@
 ]{hyperref}
 
 %opening
-\title{INF3121 Assignment 2, Document 3 \\ Manual Tests That Could Not Be Automated}
+\title{INF3121 Assignment 2, Document 3 \\ Explanation of Manual Tests That Could Not Be Automated}
 
 \author{
 Even Langfeldt Friberg\footnote{\href{mailto:evenlf@student.matnat.uio.no}{\nolinkurl{evenlf@student.matnat.uio.no}}.}
@@ -30,11 +30,12 @@ Even Langfeldt Friberg\footnote{\href{mailto:evenlf@student.matnat.uio.no}{\noli
 \maketitle
 
 \section{Test Case: CreateUserAccount.file}
-The value of \texttt{id=wpName2} is \textit{husven\_test3}, but since we already created this user in the manual test, this username is not unique. One could of course 
+The value of \texttt{id=wpName2} is \textit{husven\_test3}, but since we already created this user when we performed the manual test, this username is 
+no longer unique. One could of course 
 change this value to something unique, but the automated test would still fail because the value of \texttt{id=wpCatchaWord} was \textit{aryanbusy} when we first 
 interpreted the captcha, and this is completely unlikely to be the answer to a new captcha given.
 
-One could probably make an automated test that copied the source of the captcha image, made use of an online decaptcha service, copied the captcha word 
+One could probably make an automated test that copied the source of the captcha image, made use of an online decaptcha service, copied the computed captcha word 
 and pasted it into \texttt{id=wpCaptchaWord}, but we did not find such a service available freely.
 
 \end{document}
