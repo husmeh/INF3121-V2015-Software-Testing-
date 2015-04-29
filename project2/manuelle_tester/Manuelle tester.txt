@@ -105,6 +105,9 @@ Actual result:		Interface language changed from English to Norwegian
 Pass/Fail:		PASS
 Comment:		All good.
 
+##############
+
+
 Test case id:		3
 Test subcase id:	b
 Unit to test:		Preferences: Change interface language from Norwegian to English
@@ -121,6 +124,8 @@ Actual result:		Interface language changed from Norwegian to English
 Pass/Fail:		PASS
 Comment:		All good.
 
+
+############
 
 Test case id: 		3
 Test subcase id: 	c
@@ -139,6 +144,8 @@ Pass/Fail:		PASS
 Comment:		All good.
 
 
+########
+
 Test case id: 		3
 Test subcase id: 	d
 Unit to test:		Preferences: Change date format from default to ISO 8601
@@ -151,11 +158,14 @@ Steps to be executed:	1) Click "Appearence" tab
 			4) Verify that "Your preferences have been saved" shows on page
 			5) Go to "User profile" tab
 			6) Verify that "Registration time" under "Basic information" says "2015-04-24T12:52:51"
+
 Expected result:	Date/time format changed into ISO 8601 standard
 Actual result:		Date/time format changed into ISO 8601 standard
 Pass/Fail:		PASS
 Comment:		All good.
 
+
+##############
 
 Test case id: 		3
 Test subcase id: 	e
@@ -169,10 +179,14 @@ Steps to be executed:	1) Click "User profile" tab
 			4) Enter password in "Your Wikipedia password" field
 			5) Click "Change email" button
 			6) Verify that "A confirmation email has been sent to the specified email address." says on the screen
+
 Expected result:	Message that confirmation email has been sent appears
 Actual result:		Message that confirmation email has been sent appears
 Pass/Fail:		PASS
 Comment:		All good.
+
+
+###################
 
 Test case id: 		3
 Test subcase id: 	f
@@ -187,13 +201,14 @@ Steps to be executed:	1) Click "User profile" tab
 			5) Enter '123Project21' in reenter new password field
 			6) Click "Change password" button
 			7) Verify that message "Your password has been changed successfully!" appears
+
 Expected result:	Message that password has been changed
 Actual result:		Message that password has been changed
 Pass/Fail:		PASS
 Comment:		All good.
 
 
-###
+#############
 
 Test case id: 		4
 Test subcase id: 	a
@@ -203,6 +218,7 @@ Initial state:		User logged in
 Test data:		
 Steps to be executed:	1) Click top-right "Log out" link
 			2) Verify that message "You are now logged out." appears
+
 Expected result:	Message that user has been logged out
 Actual result:		Message that user has been logged out
 Pass/Fail:		PASS
