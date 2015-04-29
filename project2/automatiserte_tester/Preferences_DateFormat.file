@@ -4,27 +4,27 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://en.wikipedia.org/" />
-<title>Preferences_ChangeToBosnian</title>
+<title>Preferences_DateFormat</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Preferences_ChangeToBosnian</td></tr>
+<tr><td rowspan="1" colspan="3">Preferences_DateFormat</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/wiki/Main_Page</td>
+	<td>/w/index.php?title=Special:Preferences&amp;success=1#mw-prefsection-personal</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Preferences</td>
+	<td>click</td>
+	<td>id=preftab-rendering</td>
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=mw-input-wplanguage</td>
-	<td>label=nb - norsk bokmål</td>
+	<td>click</td>
+	<td>id=mw-input-wpdate-ISO_8601</td>
+	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -33,14 +33,20 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=p</td>
-	<td>Innstillingene ble lagret.</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>click</td>
+	<td>id=preftab-personal</td>
 	<td></td>
 </tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='mw-htmlform-info']/tbody/tr[5]/td[2]</td>
+	<td>2015-04-24T12:52:51</td>
+</tr>
+
 </tbody></table>
 </body>
 </html>

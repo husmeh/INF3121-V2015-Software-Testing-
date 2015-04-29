@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://en.wikipedia.org/" />
-<title>Preferences_ChangeToBosnian</title>
+<title>Preferences_FromPNGtoTEX</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Preferences_ChangeToBosnian</td></tr>
+<tr><td rowspan="1" colspan="3">Preferences_FromPNGtoTEX</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -22,9 +22,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=mw-input-wplanguage</td>
-	<td>label=nb - norsk bokmål</td>
+	<td>click</td>
+	<td>id=preftab-rendering</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mw-input-wpmath-3</td>
+	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -33,14 +38,25 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=p</td>
-	<td>Innstillingene ble lagret.</td>
+	<td>css=div.successbox</td>
+	<td>Your preferences have been saved.</td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Newton's laws of motion</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
 	<td></td>
 </tr>
+<tr>
+	<td>assertText</td>
+	<td>css=dd &gt; span.mwe-math-fallback-source-inline.tex</td>
+	<td>$ \sum {\mathbf {F}}=0\;\Leftrightarrow \;{\frac {{\mathrm {d}}{\mathbf {v}}}{{\mathrm {d}}t}}=0. $</td>
+</tr>
+
 </tbody></table>
 </body>
 </html>

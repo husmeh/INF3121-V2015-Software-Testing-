@@ -37,11 +37,15 @@
 	<td></td>
 </tr>
 <tr>
+	<td>assertText</td>
+	<td>css=div.errorbox</td>
+	<td>Login error <br /> Incorrect password entered. Please try again.</td>
+</tr>
+<tr>
 	<td>assertTitle</td>
-	<td>Wikipedia, the free encyclopedia</td>
+	<td>Log in - Wikipedia, the free encyclopedia</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
