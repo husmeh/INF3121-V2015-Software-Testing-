@@ -239,7 +239,42 @@ Pass/Fail:		PASS
 Comment:		All good.
 
 #############
+Test case id: 		5
+Test subcase id: 	
+Unit to test:		Watchlist: Display options, Advanced options
+Priority:		Low
+Initial state:		User logged in, Preferences page loaded, Tab Watchlist  
+Test data:		Display options: (Days to show in watchlist, Maximum number of changes to show in expanded watchlis),
+			Adwanced options: 
+Steps to be executed:	1) Click “Watchlist” tab
 
+			2) Click “Days to show in watchlist” under “Display options”
+			3) Enter a value in digits greater the 30 days.
+			4) Error message should appear telling you “The value you specified is above the maximum of 30.” in red
+			5) Enter a value in digits less then 0. “The value you specified is below the minimum of 0.” in red should appear 
+			6) Enter a non digit value. A popup should appear telling yo “Enter a digit”
+			7) You should get the same error messages for “Maximum number of changes to show in expanded watchlist:” field as well.
+
+			8) Click “Days to show in watchlist” under “Display options”
+			9) Enter a digit value “30”
+			10) Click on “Maximum number of changes to show in expanded watchlis”
+			11) Enter digit value “1000”
+			12) Add “Bosnia and Herzegovina”  and  “Newton's laws of motion” to watchlist
+
+			13) Click on the “Expand watchlist to show all changes, not just the most recent” in advanced options
+			14) Click on the “Add pages and files I edit to my watchlist” in Advanced options
+			15) Click on the “Show Wikidata edits in your watchlist” in Advanced options
+			16) Click on the “save” button to save the changes
+			17) There should be a gren field in the top of the page saying “Your preferences have been saved.”
+			18) Go to “Watchlist” option in the top right and you should see the changes made in watch list options,
+			there should be more entries visible from two line to approximately 55 lines visible now.
+ 
+Expected result:	Steps 2) - 7)     Expected som error message.
+Actual result:		Steps 2) - 7)     There are problems with some of your input
+Expected result:        Steps 8) - 17)    Your preferences have been saved.
+Actual result		Steps 8) - 17)    Your preferences have been saved.
+Pass/Fail:		PASS
+Comment:		All good.
 
 
 
