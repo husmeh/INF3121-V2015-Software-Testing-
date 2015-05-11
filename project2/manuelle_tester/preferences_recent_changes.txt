@@ -6,7 +6,7 @@ Initial state:		Preferences page loaded, user logged in
 Test data:		
 Steps to be executed:	1) Click "Recent changes" tab
 			2) In field "Days to show in recent changes:", type "-10"
-			3) Click "Save". Verify that "There are problems with some of your input." appears on page.
+			3) Click "Save". Verify that you are given some error message.
 			4) In field "Days to show in recent changes:", type "1"
 			5) Click "Save".
 			6) Verify "Your preferences have been saved." text on page.
@@ -20,9 +20,8 @@ Steps to be executed:	1) Click "Recent changes" tab
 			13) Click "Preferences > Recent changes". In field "Number of edits to show in recent changes, page histories, and in logs, by default:", type "1000".
 			14) Click "Save".
 			15) Verify "Your preferences have been saved." text on page.
-			16) Click "Recent changes", verify that "Show last xxx changes in last yyy days" shows "15" in bold text (xxx). You can also see that only 15 edits are listed.
-			[next]
-			[mangler en]
+			16) Click "Recent changes", verify that "Show last xxx changes in last yyy days" shows "1000" in bold text (xxx). You can also count that 1000 edits are listed.
+			
 			17) Click "Preferences > Recent changes". Tick field "Group changes by page in recent changes and watchlist (de-activate for the "Show Wikidata" option below to work)".
 			18) Click "Save", and verify that "Your preferences have been saved." text shows on page.
 			19) Click "Recent changes", scroll and check in the edit list that there is at least one triangle outside a page edit you can click to see all edits for that page grouped.
@@ -42,23 +41,43 @@ Steps to be executed:	1) Click "Recent changes" tab
 			29) Click "Preferences > Recent changes". Tick field "Always show the latest version".
 			30) Click "Save", and verify that "Your preferences have been saved." text shows on page.
 			31) Go to the Wikipedia article "Iceland" and look in the right-positioned fact box about the country. Check that HDI (2013) says 0.906. (This is last non-approved release at time 2015-05-11T15:03UTC+02:00.)
-
-			
-			
-			
-
-Expected result:	Step (8)-(10): Give some error message, as everything except positive integers should be invalid input.
-			Step (11)-(12): Give some error message, as everything except positive integers should be invalid input
-Actual result:		Step (8)-(10): "Your preferences have been saved." fifteen is interpreted as 0. Probably a bug.
+Expected result:	Step (1)-(3): Error message.
+			Step (4)-(6): Message that settings has been saved.
+			Step (8)-(10): Give some error message, as everything except positive integers should be invalid input.
+			Step (11)-(12): Give some error message, as everything except positive integers should be invalid input.
+			Step (13)-(16): 1000 edits will be listed.
+			Step (17)-(19): Edits are grouped per page.
+			Step (20)-(22): Minor edits are left out in list.
+			Step (23)-(25): Wikidata edits are shown in list.
+			Step (26)-(28): Show last stable version of article.
+			Step (29)-(31): Show last version of article (also pending).
+Actual result:		Step (1)-(3): Error message: "There are problems with some of your input."
+			Step (4)-(6): Message that settings has been saved.
+			Step (8)-(10): Error: "Input a number." This error depends on Javascript, if not active in browser then invalid input is undetected. 
 			Step (11)-(12): "Your preferences have been saved." -10 is interpreted as 0 (you can see that if you go to "Recent changes"). Probably a bug.
-Pass/Fail:		
-Comment:		Step (12): If you list too few edits you are not garantueed to find such a triangle even if the setting has been saved.
-			Step (15): If you list too few edits you are not garantueed to find such a "m" even if the setting has been saved.
-			Step (18): No verification: This tester did not find any edit line with a "D", even with 1000 entries in the edit list. If you list too few edits you are not garantueed to find such a "D" even if the setting has been saved.
+			Step (13)-(16): 1000 edits are listed.
+			Step (17)-(19): Edits are grouped per page.
+			Step (20)-(22): Minor edits are left out in list.
+			Step (23)-(25): Found no Wikidata edits in list.
+			Step (26)-(28): Last stable version of page shown.
+			Step (29)-(31): Last version (pending) of page shown.
+Pass/Fail:		Step (1)-(3): PASS
+			Step (4)-(6): PASS
+			Step (8)-(10): PASS
+			Step (11)-(12): FAIL
+			Step (13)-(16): PASS
+			Step (17)-(19): PASS
+			Step (20)-(22): PASS
+			Step (23)-(25): n/a. PASS if confirmation message is enough, FAIL if found entry is also needed.
+			Step (26)-(28): PASS
+			Step (29)-(31): PASS
+Comment:		Step (17)-(19): If you list too few edits you are not garantueed to find such a triangle even if the setting has been saved.
+			Step (20)-(22): If you list too few edits you are not garantueed to find such a "m" even if the setting has been saved.
+			Step (23)-(25): No verification: This tester did not find any edit line with a "D", even with 1000 entries in the edit list. If you list too few edits you are not garantueed to find such a "D" even if the setting has been saved.
 			I could not figure out how to test the following radioboxes:
 				- Use detailed boxes to show review status of pages
  				- Use small icons and minimal text to show review status of pages	
  				- Use the default settings for each page
-			Step (19)-(24): I found this somewhat protected page by coincidence. Stable release pages are time-dependent. It will probably not be later in time. 
+			Step (26)-(31): I found this somewhat protected page (Iceland) by coincidence. Stable release pages are time-dependent. It will probably not be later in time. 
 
 
