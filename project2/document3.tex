@@ -38,4 +38,20 @@ interpreted the captcha, and this is completely unlikely to be the answer to a n
 One could probably make an automated test that copied the source of the captcha image, made use of an online decaptcha service, copied the computed captcha word 
 and pasted it into \texttt{id=wpCaptchaWord}, but we did not find such a service available freely.
 
+\section{Test Case: Recent\_Changes.file}
+
+The tester couldn't automated step (8)-(10), which in the manual test case is negative testing to assure that giving invalid input (i.e. the word \texttt{fifteen} 
+instead of the positive integer \texttt{15}) to textfield (\textit{Number of edits to show in recent changes, page histories (...)}) should give an error. 
+There is an error given, but it's in the form of a JavaScript (?) coloring the textbox red and a popup message. The error message does not hinder the user to 
+save.
+
+In the same manner we could not automate step (11)-(12) as giving invalid input (i.e. \texttt{-10}) to textfield (\textit{Number of edits to show in recent (...)}) 
+did not give an error what so ever, but accepted \texttt{-10} as input. Obviously \texttt{-10} was actually interpreted as \texttt{0}, which was confirmed if 
+one loaded the \textit{Recent changes} page after giving this input. This could be categorized as a low-importance bug in Wikipedia.
+
+We could not automate steps (23)-(31) that is about showing the latest approved (stable) or absolutely latest (might be non-approved) article page. Coincidentially we 
+found an article on Iceland (as of 2015-05-11) that existed in two latest editions (approved and non-approved) that differed in their stating of the 2013 HDI numbers for the country. This 
+is subject to change fast, and I found it makes no sense to automatize this specific check. An article can change status from non-approved to approved as administrators and 
+trusted users approves changes.
+
 \end{document}
