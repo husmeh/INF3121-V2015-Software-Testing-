@@ -1,0 +1,29 @@
+Test case id: 		5
+Test subcase id: 	OBS
+Unit to test:		Preferences: Recent changes
+Priority:		
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Click "Recent changes" tab
+			2) In field "Days to show in recent changes:", type "1"
+			3) Click "Save".
+			4) Verify "Your preferences have been saved." text on page.
+			5) Click "Recent changes", verify that "Show last xxx changes in last yyy days" shows "1" in bold text (yyy)
+			[next]
+			6) Click "Preferences > Recent changes". In field "Number of edits to show in recent changes, page histories, and in logs, by default:", type "15".
+			7) Click "Save".
+			8) Verify "Your preferences have been saved." text on page.
+			9) Click "Recent changes", verify that "Show last xxx changes in last yyy days" shows "15" in bold text (xxx). You can also see that only 15 edits are listed.
+			[next]
+			[mangler en]
+			10) Click "Preferences > Recent changes". Tick field "Hide minor edits from recent changes".
+			11) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			12) Click "Recent changes", verify that none of the edits listed has an "m" beside it. (The "m" means that editor considered the edit minor.)
+			
+
+Expected result:	
+Actual result:		
+Pass/Fail:		
+Comment:		
+
+teste negativt?
