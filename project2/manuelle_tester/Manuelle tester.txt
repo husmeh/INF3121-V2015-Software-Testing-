@@ -278,6 +278,49 @@ Comment:		All good.
 
 
 
+#############
+Test case id: 		8
+Test subcase id: 	
+Unit to test:		Notifications: Email options, Notify me about these events,New message indicator
+Priority:		Low
+Initial state:		User logged in, Preferences page loaded, Tab Notifications  
+Test data:		Email options: (Send me:, Send to, Email format),
+			Notify me about these events:(…)
+			New message indicator:
+Steps to be executed:	1) Click “Notifications” tab
+
+			2) Click “Send me” under “Email options”
+			3) Select “A daily summary of notifications” in the scroll bar.
+
+			4) Click “Email format” under “Email options”
+			5)  
+			6) 
+			7) 
+
+			8) 
+			9) 
+			10) 
+			11) 
+			12) 
+
+			13) 
+			14) 
+			15) 
+			16) 
+			17) 
+			18) 
+			
+ 
+Expected result:	Steps 2) - 7)     Expected som error message.
+Actual result:		Steps 2) - 7)     There are problems with some of your input
+Expected result:        Steps 8) - 17)    Your preferences have been saved.
+Actual result		Steps 8) - 17)    Your preferences have been saved.
+Pass/Fail:		PASS
+Comment:		All good.
+
+
+
+
 
 #############
 
