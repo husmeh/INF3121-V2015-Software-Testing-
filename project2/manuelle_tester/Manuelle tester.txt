@@ -239,7 +239,7 @@ Pass/Fail:		PASS
 Comment:		All good.
 
 #############
-Test case id: 		5
+Test case id: 		6
 Test subcase id: 	
 Unit to test:		Watchlist: Display options, Advanced options
 Priority:		Low
