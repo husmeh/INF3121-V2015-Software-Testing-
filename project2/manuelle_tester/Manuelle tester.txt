@@ -299,7 +299,7 @@ Steps to be executed:	1) Click “Notifications” tab
 
 			8) 
 			9) 
-			10) 
+			10)  
 			11) 
 			12) 
 
@@ -309,7 +309,6 @@ Steps to be executed:	1) Click “Notifications” tab
 			16) 
 			17) 
 			18) 
-			
  
 Expected result:	Steps 2) - 7)     Expected som error message.
 Actual result:		Steps 2) - 7)     There are problems with some of your input
