@@ -16,14 +16,25 @@ Steps to be executed:	1) Click "Recent changes" tab
 			9) Click "Recent changes", verify that "Show last xxx changes in last yyy days" shows "15" in bold text (xxx). You can also see that only 15 edits are listed.
 			[next]
 			[mangler en]
-			10) Click "Preferences > Recent changes". Tick field "Hide minor edits from recent changes".
+			10) Click "Preferences > Recent changes". Tick field "Group changes by page in recent changes and watchlist (de-activate for the "Show Wikidata" option below to work)".
 			11) Click "Save", and verify that "Your preferences have been saved." text shows on page.
-			12) Click "Recent changes", verify that none of the edits listed has an "m" beside it. (The "m" means that editor considered the edit minor.)
+			12) Click "Recent changes", scroll and check in the edit list that there is at least one triangle outside a page edit you can click to see all edits for that page grouped.
+			
+
+			13) Click "Preferences > Recent changes". Tick field "Hide minor edits from recent changes".
+			14) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			15) Click "Recent changes", verify that none of the edits listed has an "m" beside it. (The "m" means that editor considered the edit minor.)
+
+			16) Click "Preferences > Recent changes". Untick field "Group changes by page in recent changes and watchlist (de-activate for the "Show Wikidata" option below to work)". (Required for next tick to work.) Tick field "Show Wikidata edits by default in recent changes and watchlist (does not work yet with enhanced changes)".
+			17) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			18) Click "Recent changes", scroll and check in the edit list that there is at least one "D" beside it. (Means that edit was made at Wikidata.)
 			
 
 Expected result:	
 Actual result:		
 Pass/Fail:		
-Comment:		
+Comment:		Step (12): If you list too few edits you are not garantueed to find such a triangle even if the setting has been saved.
+			Step (15): If you list too few edits you are not garantueed to find such a "m" even if the setting has been saved.
+			Step (18): No verification: This tester did not find any edit line with a "D", even with 1000 entries in the edit list. If you list too few edits you are not garantueed to find such a "D" even if the setting has been saved.
 
 teste negativt?
