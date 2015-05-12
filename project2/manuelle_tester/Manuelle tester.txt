@@ -238,7 +238,7 @@ Steps to be executed:
 			19) Type of text(Font) is changed to Sherif font from Browser default
 			20) The text field is reduced in size from 80 columns to 10 and that rows is reduced from 20 to 5.
 		
-
+ 
 Expected result:	Your preferences have been saved
 Actual result:		Your preferences have been saved
 Pass/Fail:		PASS
