@@ -216,22 +216,28 @@ Initial state:		User logged in, Preferences page loaded, Tab Editing
 Test data:		General options: (Edit pages in double click),
 			Editor: (Edit area font style, columns:, rows:),
 			Preview: (show preview on first edit)
-Steps to be executed:	1) Click “Editing” tab
-			2) Click “Edit pages on double click” under “General options”
-			3) Click “Edit area font style” under “Editor” and choose “Serif font”
-			4) Click ”Columns” in “Editor” under Editor and set to “-10”
-			5) “There are problems with some of your input.” should appear on the top of the page in red
-			6) “The value you specified is below the minimum of 4.” should appear under “Editor” under field “Column” in red
-			7) Click ”Columns” in “Editor” under Editor and set to “AB” and Click on “save” button
-			8) A popup should appear In the “Column” field  telling you to “type in a digit”
-			9) Click ”Columns” in “Editor” under Editor and set to “10”
-			10) Click “Rows” under “Editor” and set to “5”
-			11) Click “Show preview on first edit” under “Preview”
-			12) Click on the “save” button in the bottom of the page, 
-			13) Click on “Talk” on top right, “Doubbleclick on the Testing text”
-			14) “Editing User talk:Husven test3”  should sow up as main title as proof that double click is functioning
-			15) Type in text to show that text type is changed
-			16) The text field is reduced in size from 80 columns to 10 and that rows is reduced from 20 to 5.
+Steps to be executed:	
+			1) Click on “Talk” in top right.
+			2) Trying to double click on the link Testing doesn’t give any result
+			3) Click on “Edit” tab in the top menu to se the text field and the font
+			4) Click on “Preferances” on top right
+			5) Click “Editing” tab
+			6) Click “Edit pages on double click” under “General options”
+			7) Click “Edit area font style” under “Editor” and choose “Serif font”
+			8) Click ”Columns” in “Editor” under Editor and set to “-10”
+			9) “There are problems with some of your input.” should appear on the top of the page in red
+			10) “The value you specified is below the minimum of 4.” should appear under “Editor” under field “Column” in red
+			11) Click ”Columns” in “Editor” under Editor and set to “abc” and Click on “save” button
+			12) A popup should appear In the “Column” field  telling you to “type in a digit” the same is for “rows”
+			13) Click ”Columns” in “Editor” under Editor and set to “10”
+			14) Click “Rows” under “Editor” and set to “5”
+			15) Click “Show preview on first edit” under “Preview”
+			16) Click on the “save” button in the bottom of the page, 
+			17) Click on “Talk” on top right, “Doubbleclick on the Testing text”
+			18) “Editing User talk:Husven test3”  should show up as main title as proof that double click is functioning
+			19) Type of text(Font) is changed to Sherif font from Browser default
+			20) The text field is reduced in size from 80 columns to 10 and that rows is reduced from 20 to 5.
+		
 
 Expected result:	Your preferences have been saved
 Actual result:		Your preferences have been saved
