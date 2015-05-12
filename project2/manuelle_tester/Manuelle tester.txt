@@ -244,7 +244,8 @@ Actual result:		Your preferences have been saved
 Pass/Fail:		PASS
 Comment:		All good. We can se that it’s possible to test for the positive and negative testing since we get error message when we
 			try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
-			it would be possible to enter any value that wouldn’t give sense for the user.
+			it would be possible to enter any value that wouldn’t give sense for the user. Popups when entering invalid value e.g letters
+			or other characters dont give error but a popup that says only digits possible.
 
 
 
@@ -344,37 +345,50 @@ Priority:		Low
 Initial state:		User logged in, Preferences page loaded, Tab Watchlist  
 Test data:		Display options: (Days to show in watchlist, Maximum number of changes to show in expanded watchlis),
 			Adwanced options: 
-Steps to be executed:	1) Click “Watchlist” tab
+Steps to be executed:	1) Click “Watchlist” on top right
 
-			2) Click “Days to show in watchlist” under “Display options”
-			3) Enter a value in digits greater the 30 days.
-			4) Error message should appear telling you “The value you specified is above the maximum of 30.” in red
-			5) Enter a value in digits less then 0. “The value you specified is below the minimum of 0.” in red should appear 
-			6) Enter a non digit value. A popup should appear telling yo “Enter a digit”
-			7) You should get the same error messages for “Maximum number of changes to show in expanded watchlist:” field as well.
+			2) Controll that there are just two watch lists
+			3) Click “Preferences” on top right of the page
+			4) Click “Watchlist” tab 
+			5) Enter a non digit value e.g “abc” under “Display options”  in the field “Days to show in watchlist” 
+			6) Enter a non digit value e.g “abc” under “Display options”  in the field “Maximum number of changes to show in expanded watchlist:”
+			7) Click “save”
+			8) A popup should appear telling yo “Enter a digit”
+			
+			9) Enter a value in digits less then 0 e.g “-30” under “Display options”  in the field “Days to show in watchlist”
+			10) Enter a value in digits less then 0 e.g “-1000” under “Display options”  in the field “Maximum number of changes to show in expanded  			watchlist:” 
+			11) Click “save”
+			12) “The value you specified is below the minimum of 0.” in red should appear 
+			
+			13) Enter a value greater then “30” e.g “300”under “Display options”  in the field “Days to show in watchlist”
+			14) Enter a value greater then “1000” e.g “1500” unde “Display options” in the field “Maximum number of changes to show in expanded 				watchlist:”
+			15) Click “save”
+			16) Error message should appear telling you “The value you specified is the maximum of 30.” in red for “Days to show in watchlist”
+			17) Error message should appear telling you “The value you specified is above the maximum of 1000.””  “Display options”  in the field “Maximum 			number of changes to show in expanded watchlist:”
 
-			8) Click “Days to show in watchlist” under “Display options”
-			9) Enter a digit value “30”
-			10) Click on “Maximum number of changes to show in expanded watchlis”
-			11) Enter digit value “1000”
-			12) Add “Bosnia and Herzegovina”  and  “Newton's laws of motion” to watchlist
-
-			13) Click on the “Expand watchlist to show all changes, not just the most recent” in advanced options
-			14) Click on the “Add pages and files I edit to my watchlist” in Advanced options
-			15) Click on the “Show Wikidata edits in your watchlist” in Advanced options
-			16) Click on the “save” button to save the changes
-			17) There should be a gren field in the top of the page saying “Your preferences have been saved.”
-			18) Go to “Watchlist” option in the top right and you should see the changes made in watch list options,
-			there should be more entries visible from two line to approximately 55 lines visible now.
+			18) Enter the value “30” under “Display options”  in the field “Days to show in watchlist”
+			19) Enter the value “1000” under “Display options”  in the field “Maximum number of changes to show in expanded watchlist:”
+			20) Click “save”
+			21) Click on the “Expand watchlist to show all changes, not just the most recent” in advanced options
+			22) Click on the “Hide my edits from the watchlist” in advanced options
+			23) Click on the “save” button to save the changes
+			24) There should be a gren field in the top of the page saying “Your preferences have been saved.”
+			25) Go to “Watchlist” option in the top right and you should see the changes made in watch list options.
+			Now there should be more watch lists  changes but none of them is supposed to be edited by user Husven test3, which is what we want
+			int this test case.
+			There should be more entries visible from two line to approximately 55 lines visible now. 
  
-Expected result:	Steps 2) - 7)     Expected som error message.
-Actual result:		Steps 2) - 7)     There are problems with some of your input
-Expected result:        Steps 8) - 17)    Your preferences have been saved.
-Actual result		Steps 8) - 17)    Your preferences have been saved.
+Expected result:	Steps 5) - 17)     Expected som error message.
+Actual result:		Steps 5) - 17)     There are problems with some of your input
+Expected result:        Steps 17) - 24)    Your preferences have been saved.
+Actual result		Steps 17) - 24)    Your preferences have been saved.
 Pass/Fail:		PASS
-Comment:		All good. We can se that it’s possible to test for the positive and negative testing since we get error message when we
+Comment:		We can se that it’s possible to test for the positive and negative testing since we get error message when we
 			try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
-			it would be possible to enter any value that wouldn’t give sense for the user.
+			it would be possible to enter any value that wouldn’t give sense for the user. The reason of choosing “Hide my edits from the watchlist” in 			advanced options is because we can make Selenium IDE to go in to the HTML and CSS source file and specifie what to look for because the user 
+			username is not a variable that changes like the variables in Watchlist options with that changes with time and are not possible to automate
+			Changes are variables that change and some times it can say “Below are the last 37 changes in the last 720 hours” another day it may say
+			Below are the last 60 changes in the last 720 hours. SO it’s difficult to test a variable.
 
 #############
 
