@@ -250,7 +250,6 @@ Comment:		All good. We can se that it’s possible to test for the positive and 
 
 
 #############
-
 Test case id: 		5
 Test subcase id: 	OBS
 Unit to test:		Preferences: Recent changes
@@ -294,6 +293,12 @@ Steps to be executed:	1) Click "Recent changes" tab
 			29) Click "Preferences > Recent changes". Tick field "Always show the latest version".
 			30) Click "Save", and verify that "Your preferences have been saved." text shows on page.
 			31) Go to the Wikipedia article "Iceland" and look in the right-positioned fact box about the country. Check that HDI (2013) says 0.906. (This is last non-approved release at time 2015-05-11T15:03UTC+02:00.)
+			32) Click "Preferences > Recent changes". Choose radio button "Use detailed boxes to show review status of pages".
+			33) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			34) Go to the Wikipedia article "Iceland" and confirm that on the top of the article page there is a long horizontal box with background color that says "This is the latest accepted revision, reviewed on DD mm YYYY."
+			35) Click "Preferences > Recent changes". Choose radio button "Use small icons and minimal text to show review status of pages".
+			36) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			37) Go to the Wikipedia article "Iceland" and confirm that there is a small top-right positioned box in article that says "Accepted (latest)".
 Expected result:	Step (1)-(3): Error message.
 			Step (4)-(6): Message that settings has been saved.
 			Step (8)-(10): Give some error message, as everything except positive integers should be invalid input.
@@ -304,6 +309,8 @@ Expected result:	Step (1)-(3): Error message.
 			Step (23)-(25): Wikidata edits are shown in list.
 			Step (26)-(28): Show last stable version of article.
 			Step (29)-(31): Show last version of article (also pending).
+			Step (32)-(34): Show long horizontal box with text "This is the latest accepted revision, reviewed on DD mm YYYY."
+			Step (35)-(37): Show small top-right positioned box with text "Accepted (latest)".
 Actual result:		Step (1)-(3): Error message: "There are problems with some of your input."
 			Step (4)-(6): Message that settings has been saved.
 			Step (8)-(10): Error: "Input a number." This error depends on Javascript, if not active in browser then invalid input is undetected. 
@@ -314,6 +321,8 @@ Actual result:		Step (1)-(3): Error message: "There are problems with some of yo
 			Step (23)-(25): Found no Wikidata edits in list.
 			Step (26)-(28): Last stable version of page shown.
 			Step (29)-(31): Last version (pending) of page shown.
+			Step (32)-(34): Show long horizontal box with text "This is the latest accepted revision, reviewed on DD mm YYYY."
+			Step (35)-(37): Show small top-right positioned box with text "Accepted (latest)".
 Pass/Fail:		Step (1)-(3): PASS
 			Step (4)-(6): PASS
 			Step (8)-(10): PASS
@@ -324,14 +333,15 @@ Pass/Fail:		Step (1)-(3): PASS
 			Step (23)-(25): n/a. PASS if confirmation message is enough, FAIL if found entry is also needed.
 			Step (26)-(28): PASS
 			Step (29)-(31): PASS
+			Step (32)-(34): PASS
+			Step (35)-(37): PASS
 Comment:		Step (17)-(19): If you list too few edits you are not garantueed to find such a triangle even if the setting has been saved.
 			Step (20)-(22): If you list too few edits you are not garantueed to find such a "m" even if the setting has been saved.
 			Step (23)-(25): No verification: This tester did not find any edit line with a "D", even with 1000 entries in the edit list. If you list too few edits you are not garantueed to find such a "D" even if the setting has been saved.
-			I could not figure out how to test the following radioboxes:
-				- Use detailed boxes to show review status of pages
- 				- Use small icons and minimal text to show review status of pages	
- 				- Use the default settings for each page
 			Step (26)-(31): I found this somewhat protected page (Iceland) by coincidence. Stable release pages are time-dependent. It will probably not be later in time. 
+
+			I could not figure out how to test the following radioboxes:
+ 				- Use the default settings for each page 
 
 
 
@@ -381,7 +391,7 @@ Steps to be executed:	1) Click “Watchlist” on top right
 Expected result:	Steps 5) - 17)     Expected som error message.
 Actual result:		Steps 5) - 17)     There are problems with some of your input
 Expected result:        Steps 17) - 24)    Your preferences have been saved.
-Actual result		Steps 17) - 24)    Your preferences have been saved.
+Actual result		Steps 17) - 24)    Your preferences have been saved. 
 Pass/Fail:		PASS
 Comment:		We can se that it’s possible to test for the positive and negative testing since we get error message when we
 			try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
