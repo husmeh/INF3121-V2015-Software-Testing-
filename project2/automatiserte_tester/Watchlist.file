@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://en.wikipedia.org/wiki/Main_Page" />
+<title>Watchlist</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Watchlist</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/w/index.php?title=Special:Preferences&amp;success</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a[title=&quot;The list of pages you are monitoring for changes [⌃⌥L]&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertHtmlSource</td>
+	<td>regexp:[\s\S](&lt;a href=&quot;\/wiki\/User\_talk:Fendergutt&quot; title=&quot;User talk:Fendergutt&quot;&gt;talk&lt;\/a&gt;)[\s\S]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-watchlist</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwatchlistdays</td>
+	<td>abc</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwllimit</td>
+	<td>abc</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwatchlistdays</td>
+	<td>300</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwllimit</td>
+	<td>1500</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwatchlistdays</td>
+	<td>-30</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwllimit</td>
+	<td>-1000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwatchlistdays</td>
+	<td>30</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mw-input-wpwllimit</td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mw-input-wpwatchlisthideown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a[title=&quot;The list of pages you are monitoring for changes [⌃⌥L]&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotHtmlSource</td>
+	<td>regexp:[\s\S](&lt;a href=&quot;\/wiki\/User\_talk:Husven test3t&quot; title=&quot;User talk:Husven test3&quot;&gt;talk&lt;\/a&gt;)[\s\S]</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
