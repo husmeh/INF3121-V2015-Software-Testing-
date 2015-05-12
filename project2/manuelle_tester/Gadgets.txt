@@ -1,0 +1,91 @@
+Test case id: 		7
+Test subcase id: 	OBS
+Unit to test:		Preferences: Gadgets
+Priority:		
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	
+			1) Click "Gadgets" tab, verify that "Disable access keys" is unchecked. If checked, then uncheck.
+			2) Click "Save", and verify that "Your preferences have been saved." is shown.
+			3) Click "Main page".
+			4) Press (on Firefox 14+ on Mac) ctrl+alt+f and verify that text cursor is moved to search box.
+			5) Click "Gadgets" tab, check "Disable access keys".
+			6) Click "Save", and verify that "Your preferences have been saved." is shown.
+			7) Click "Main page".
+			8) Press (on Firefox 14+ on Mac) ctrl+alt+f and verify that text cursor is NOT moved to search box.
+			9) Click "Gadgets" tab, verify that "Focus the cursor in the search bar on loading the Main Page" is unchecked. If checked, then uncheck.
+			10) Click "Save", and verify that "Your preferences have been saved." is shown.
+			11) Click "Main page" and verify that text cursor is NOT in search box.
+			12) Click "Gadgets" tab, check "Focus the cursor in the search bar on loading the Main Page".
+			13) Click "Save", and verify that "Your preferences have been saved." is shown.
+			14) Click "Main page" and verify that text cursor is in search box.
+			15) Click "Gadgets" tab, verify that "GoogleTrans: open a translation popup for the selected text or the word under the cursor when pushing the shift button" is unchecked. If checked, then uncheck.
+			16) Click "Main page". Place cursor over some randomly chosen word. Press keyboard shift. Verify that GoogleTrans box does NOT appear.
+			17) Click "Gadgets" tab, check "GoogleTrans: open a translation popup for the selected text or the word under the cursor when pushing the shift button".
+			18) Click "Save", and verify that "Your preferences have been saved." is shown.
+			19) Click "Main page". Place cursor over some randomly chosen word. Press keyboard shift. Verify that GoogleTrans box does appear.
+			20) Click "Gadgets" tab, check "Navigation popups, article previews and editing functions popup when hovering over links".
+			21) Click "Save", and verify that "Your preferences have been saved." is shown.
+			22) Click "Main page". Place cursor over some randomly chosen link. Verify that article popup preview does appear.
+			23) Click "Gadgets" tab, check "Open external links in a new tab/window".
+			24) Click "Save", and verify that "Your preferences have been saved." is shown.
+			25) Search for "FBI Ten Most Wanted Fugitives#External links" in the search field and click the first listed external link. Verify that it opens in a new tab/window.
+			26) Click "Gadgets" tab, check "Open search results in new tab/window when holding down the CTRL-key.".
+			27) Click "Save", and verify that "Your preferences have been saved." is shown.
+			28) Click "Main page". Type "Perfectionism" in search field, press ctrl+enter and verify that page appears in new tab/window.
+			
+			
+Expected result:	
+			(1)-(4): Text cursor is moved to search box.
+			(5)-(8): Text cursor is NOT moved to search box.
+			(9)-(11): Text cursor is NOT in search box.
+			(12)-(14): Text cursor is in search box.
+			(15)-(16): GoogleTrans box does NOT appear.
+			(17)-(19): GoogleTrans box does appear.
+			(20)-(22): Article popup preview does appear.
+			(23)-(25): External link open in new tab/window.
+			(26)-(28): Search result opens in new tab/window.
+			
+Actual result:		
+			(1)-(4): Text cursor is moved to search box.
+			(5)-(8): Text cursor is NOT moved to search box.
+			(9)-(11): Text cursor is NOT in search box.
+			(12)-(14): Text cursor is in search box.
+			(15)-(16): GoogleTrans box does NOT appear.
+			(17)-(19): GoogleTrans box does appear.
+			(20)-(22): Article popup privew does appear.
+			(23)-(25): External link open in new tab/window.
+			(26)-(28): Search result opens in new tab/window.
+Pass/Fail:		
+			(1)-(4): PASS
+			(5)-(8): PASS
+			(9)-(11): PASS
+			(12)-(14): PASS
+			(15)-(16): PASS
+			(17)-(19): PASS
+			(20)-(22): PASS
+			(23)-(25): PASS
+			(26)-(28): PASS
+Comment:		
+			Manual tests not done:
+				- "After rolling back an edit, automatically open the contributions of the user whose edit has been rolled back"
+					Will skip as we are not prepared to roll-back/undo Wikipedia contributions of other users.
+				- "ImageAnnotator, to view notes and comments that people have placed upon images shown on file description pages."
+					In my opinion: Not important to normal user.
+				- "Redirect image links to Commons for files that are hosted there"
+					In my opinion: Not important to normal user.
+				- "Print options gives you more control when printing content. Remove images or the background for instance."
+					In my opinion: Not important to normal user.
+				- "The revisionjumper creates an interface which allows you to jump between different revisions."
+					In my opinion: Not important to normal user.
+				- "Suppress display of fundraiser banners"
+					In my opinion: Not important to normal user.
+				- "Suppress display of all Central Notices"
+					In my opinion: Not important to normal user.
+				- ""Ask a question" feature for the Teahouse project"
+					In my opinion: Not important to normal user.
+				- "Reference Tooltips: Roll over any inline citation to see reference information, instead of having to jump away from the article text."
+					In my opinion: Not important to normal user.
+				- "FormWizard. A wizard for creating and expanding project pages."
+					In my opinion: Not important to normal user.
+				

@@ -1,0 +1,41 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage{color}
+
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
+
+% Hyperlinks in PDF: \href{url}{linktext}
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage[%
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+]{hyperref}
+
+%opening
+\title{INF3121 Assignment 2, Document 3 \\ Explanation of Manual Tests That Could Not Be Automated}
+
+\author{
+Even Langfeldt Friberg\footnote{\href{mailto:evenlf@student.matnat.uio.no}{\nolinkurl{evenlf@student.matnat.uio.no}}.}
+\and Husein Mehmedagic\footnote{\href{mailto:huseinm@student.matnat.uio.no}{\nolinkurl{huseinm@student.matnat.uio.no}}.}
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Test Case: CreateUserAccount.file}
+The value of \texttt{id=wpName2} is \textit{husven\_test3}, but since we already created this user when we performed the manual test, this username is 
+no longer unique. One could of course 
+change this value to something unique, but the automated test would still fail because the value of \texttt{id=wpCatchaWord} was \textit{aryanbusy} when we first 
+interpreted the captcha, and this is completely unlikely to be the answer to a new captcha given.
+
+One could probably make an automated test that copied the source of the captcha image, made use of an online decaptcha service, copied the computed captcha word 
+and pasted it into \texttt{id=wpCaptchaWord}, but we did not find such a service available freely.
+
+\end{document}
