@@ -236,7 +236,99 @@ Steps to be executed:	1) Click “Editing” tab
 Expected result:	Your preferences have been saved
 Actual result:		Your preferences have been saved
 Pass/Fail:		PASS
-Comment:		All good.
+Comment:		All good. We can se that it’s possible to test for the positive and negative testing since we get error message when we
+			try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
+			it would be possible to enter any value that wouldn’t give sense for the user.
+
+
+
+#############
+
+Test case id: 		5
+Test subcase id: 	OBS
+Unit to test:		Preferences: Recent changes
+Priority:		
+Initial state:		Preferences page loaded, user logged in
+Test data:		
+Steps to be executed:	1) Click "Recent changes" tab
+			2) In field "Days to show in recent changes:", type "-10"
+			3) Click "Save". Verify that you are given some error message.
+			4) In field "Days to show in recent changes:", type "1"
+			5) Click "Save".
+			6) Verify "Your preferences have been saved." text on page.
+			7) Click "Recent changes", verify that "Show last xxx changes in last yyy days" shows "1" in bold text (yyy)
+			[next]
+			8) Click "Preferences > Recent changes". In field "Number of edits to show in recent changes, page histories, and in logs, by default:", type "fifteen".
+			9) Click "Save". 
+			10) Verify that you get some error message.
+			11) In field "Number of edits to show in recent changes, page histories, and in logs, by default:", type "-10".
+			12) Click "Save". Verify that you get some error message.
+			13) Click "Preferences > Recent changes". In field "Number of edits to show in recent changes, page histories, and in logs, by default:", type "1000".
+			14) Click "Save".
+			15) Verify "Your preferences have been saved." text on page.
+			16) Click "Recent changes", verify that "Show last xxx changes in last yyy days" shows "1000" in bold text (xxx). You can also count that 1000 edits are listed.
+			
+			17) Click "Preferences > Recent changes". Tick field "Group changes by page in recent changes and watchlist (de-activate for the "Show Wikidata" option below to work)".
+			18) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			19) Click "Recent changes", scroll and check in the edit list that there is at least one triangle outside a page edit you can click to see all edits for that page grouped.
+			
+
+			20) Click "Preferences > Recent changes". Tick field "Hide minor edits from recent changes".
+			21) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			22) Click "Recent changes", verify that none of the edits listed has an "m" beside it. (The "m" means that editor considered the edit minor.)
+
+			23) Click "Preferences > Recent changes". Untick field "Group changes by page in recent changes and watchlist (de-activate for the "Show Wikidata" option below to work)". (Required for next tick to work.) Tick field "Show Wikidata edits by default in recent changes and watchlist (does not work yet with enhanced changes)".
+			24) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			25) Click "Recent changes", scroll and check in the edit list that there is at least one "D" beside it. (Means that edit was made at Wikidata.)
+			
+			26) Click "Preferences > Recent changes". Tick field "Always show the stable version (if there is one)".
+			27) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			28) Go to the Wikipedia article "Iceland" and look in the right-positioned fact box about the country. Check that HDI (2013) says 0.895. (This is last stable release at time 2015-05-11T15:03UTC+02:00.)
+			29) Click "Preferences > Recent changes". Tick field "Always show the latest version".
+			30) Click "Save", and verify that "Your preferences have been saved." text shows on page.
+			31) Go to the Wikipedia article "Iceland" and look in the right-positioned fact box about the country. Check that HDI (2013) says 0.906. (This is last non-approved release at time 2015-05-11T15:03UTC+02:00.)
+Expected result:	Step (1)-(3): Error message.
+			Step (4)-(6): Message that settings has been saved.
+			Step (8)-(10): Give some error message, as everything except positive integers should be invalid input.
+			Step (11)-(12): Give some error message, as everything except positive integers should be invalid input.
+			Step (13)-(16): 1000 edits will be listed.
+			Step (17)-(19): Edits are grouped per page.
+			Step (20)-(22): Minor edits are left out in list.
+			Step (23)-(25): Wikidata edits are shown in list.
+			Step (26)-(28): Show last stable version of article.
+			Step (29)-(31): Show last version of article (also pending).
+Actual result:		Step (1)-(3): Error message: "There are problems with some of your input."
+			Step (4)-(6): Message that settings has been saved.
+			Step (8)-(10): Error: "Input a number." This error depends on Javascript, if not active in browser then invalid input is undetected. 
+			Step (11)-(12): "Your preferences have been saved." -10 is interpreted as 0 (you can see that if you go to "Recent changes"). Probably a bug.
+			Step (13)-(16): 1000 edits are listed.
+			Step (17)-(19): Edits are grouped per page.
+			Step (20)-(22): Minor edits are left out in list.
+			Step (23)-(25): Found no Wikidata edits in list.
+			Step (26)-(28): Last stable version of page shown.
+			Step (29)-(31): Last version (pending) of page shown.
+Pass/Fail:		Step (1)-(3): PASS
+			Step (4)-(6): PASS
+			Step (8)-(10): PASS
+			Step (11)-(12): FAIL
+			Step (13)-(16): PASS
+			Step (17)-(19): PASS
+			Step (20)-(22): PASS
+			Step (23)-(25): n/a. PASS if confirmation message is enough, FAIL if found entry is also needed.
+			Step (26)-(28): PASS
+			Step (29)-(31): PASS
+Comment:		Step (17)-(19): If you list too few edits you are not garantueed to find such a triangle even if the setting has been saved.
+			Step (20)-(22): If you list too few edits you are not garantueed to find such a "m" even if the setting has been saved.
+			Step (23)-(25): No verification: This tester did not find any edit line with a "D", even with 1000 entries in the edit list. If you list too few edits you are not garantueed to find such a "D" even if the setting has been saved.
+			I could not figure out how to test the following radioboxes:
+				- Use detailed boxes to show review status of pages
+ 				- Use small icons and minimal text to show review status of pages	
+ 				- Use the default settings for each page
+			Step (26)-(31): I found this somewhat protected page (Iceland) by coincidence. Stable release pages are time-dependent. It will probably not be later in time. 
+
+
+
+
 
 #############
 Test case id: 		6
@@ -274,7 +366,13 @@ Actual result:		Steps 2) - 7)     There are problems with some of your input
 Expected result:        Steps 8) - 17)    Your preferences have been saved.
 Actual result		Steps 8) - 17)    Your preferences have been saved.
 Pass/Fail:		PASS
-Comment:		All good.
+Comment:		All good. We can se that it’s possible to test for the positive and negative testing since we get error message when we
+			try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
+			it would be possible to enter any value that wouldn’t give sense for the user.
+
+#############
+
+
 
 
 
@@ -293,30 +391,21 @@ Steps to be executed:	1) Click “Notifications” tab
 			3) Select “A daily summary of notifications” in the scroll bar.
 
 			4) Click “Email format” under “Email options”
-			5)  
-			6) 
-			7) 
+			5) Change to “Plain text” in the scroll menu
+			6) Unnclick all options under “Web” in “Notify me about these events” options
+			7) Turn on all “Email” under “Web” in “Notify me about these events” options
 
-			8) 
-			9) 
-			10)  
-			11) 
-			12) 
-
-			13) 
-			14) 
-			15) 
-			16) 
-			17) 
-			18) 
+			8) Now all “Web” options are turned off and all “Email” turned on
+			9) Now click on the “save” button at the bottom of the page.
+			10) After saving a text in gren should apper on top of the page saying “Your preferences have been saved.”
  
-Expected result:	Steps 2) - 7)     Expected som error message.
-Actual result:		Steps 2) - 7)     There are problems with some of your input
-Expected result:        Steps 8) - 17)    Your preferences have been saved.
-Actual result		Steps 8) - 17)    Your preferences have been saved.
-Pass/Fail:		PASS
-Comment:		All good.
 
+Expected result:       	Your preferences have been saved.
+Actual result		Your preferences have been saved.
+Pass/Fail:		PASS
+Comment:		All good. This one seems to be difficult to automate due to the changes and email receiving to confirm that the changes are 
+			are made witch makes it difficult to automate.
+  
 
 
 
