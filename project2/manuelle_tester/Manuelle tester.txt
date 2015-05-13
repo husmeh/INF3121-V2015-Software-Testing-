@@ -243,7 +243,7 @@ Expected result:	Your preferences have been saved
 Actual result:		Your preferences have been saved
 Pass/Fail:		PASS
 Comment:		All good. We can se that it’s possible to test for the positive and negative testing since we get error message when we
-			try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
+			try to put an invalid value in fields 8) - 12) it appears that only positive digits of specified value are legal. Otherwise
 			it would be possible to enter any value that wouldn’t give sense for the user. Popups when entering invalid value e.g letters
 			or other characters dont give error but a popup that says only digits possible.
 
