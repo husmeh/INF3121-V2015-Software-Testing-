@@ -417,24 +417,22 @@ Test data:		Email options: (Send me:, Send to, Email format),
 			New message indicator:
 Steps to be executed:	1) Click “Notifications” tab
 
-			2) Click “Send me” under “Email options”
+			2) Click “Show talk page message indicator in my toolbar“ under “New message indicator”
 			3) Select “A daily summary of notifications” in the scroll bar.
 
-			4) Click “Email format” under “Email options”
-			5) Change to “Plain text” in the scroll menu
-			6) Unnclick all options under “Web” in “Notify me about these events” options
-			7) Turn on all “Email” under “Web” in “Notify me about these events” options
-
-			8) Now all “Web” options are turned off and all “Email” turned on
-			9) Now click on the “save” button at the bottom of the page.
-			10) After saving a text in gren should apper on top of the page saying “Your preferences have been saved.”
- 
+			4) Now click on the “save” button at the bottom of the page.
+			5) After saving a text in gren should apper on top of the page saying “Your preferences have been saved.”
+ 			6) Now the message indicator in toolbar is not visible.
 
 Expected result:       	Your preferences have been saved.
 Actual result		Your preferences have been saved.
 Pass/Fail:		PASS
 Comment:		All good. This one seems to be difficult to automate due to the changes and email receiving to confirm that the changes are 
-			are made witch makes it difficult to automate.
+			are made witch makes it difficult to automate. Reason for this is this actions are relies of other people interacting with my talk
+			and notifications which may be difficult to interpret with Selenium IDE and even with manual test. The problem here is that when we run
+			the other tests like Watchlist we need to go to Talk option and then the message indicator in the toolbar despair and it gives us an error
+			because the test relies that the message is not red. So its possible to test but it may give som issues when running the whole test suite.
+
   
 
 
