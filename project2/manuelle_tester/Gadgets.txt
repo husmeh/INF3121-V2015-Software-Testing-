@@ -1,9 +1,15 @@
 Test case id: 		7
+
 Test subcase id: 	OBS
+
 Unit to test:		Preferences: Gadgets
-Priority:		
+
+Priority:			Low
+
 Initial state:		Preferences page loaded, user logged in
-Test data:		
+
+Test data:			Disable access keys; Focus cursor in search bar on loading Main page; GoogleTrans popup; Navigation popups; Open external links in new tab/window; Open search result in new tab/window; Display changed pages on watchlist in bold; charInsert toolbar; Article quality assessment
+
 Steps to be executed:	
 			1) Click "Gadgets" tab, verify that "Disable access keys" is unchecked. If checked, then uncheck.
 			2) Click "Save", and verify that "Your preferences have been saved." is shown.
@@ -24,17 +30,49 @@ Steps to be executed:
 			17) Click "Gadgets" tab, check "GoogleTrans: open a translation popup for the selected text or the word under the cursor when pushing the shift button".
 			18) Click "Save", and verify that "Your preferences have been saved." is shown.
 			19) Click "Main page". Place cursor over some randomly chosen word. Press keyboard shift. Verify that GoogleTrans box does appear.
-			20) Click "Gadgets" tab, check "Navigation popups, article previews and editing functions popup when hovering over links".
+			
+			20) Click "Gadgets" tab, verify that "Navigation popups, article previews and editing functions popup when hovering over links" is unchecked. If checked, then uncheck.
 			21) Click "Save", and verify that "Your preferences have been saved." is shown.
-			22) Click "Main page". Place cursor over some randomly chosen link. Verify that article popup preview does appear.
-			23) Click "Gadgets" tab, check "Open external links in a new tab/window".
+			22) Click "Main page". Place cursor over some randomly chosen link. Verify that article popup preview does NOT appear.
+			
+			23) Click "Gadgets" tab, check "Navigation popups, article previews and editing functions popup when hovering over links".
 			24) Click "Save", and verify that "Your preferences have been saved." is shown.
-			25) Search for "FBI Ten Most Wanted Fugitives#External links" in the search field and click the first listed external link. Verify that it opens in a new tab/window.
-			26) Click "Gadgets" tab, check "Open search results in new tab/window when holding down the CTRL-key.".
+			25) Click "Main page". Place cursor over some randomly chosen link. Verify that article popup preview does appear.
+			
+			26) Click "Gadgets" tab, verify that "Open external links in a new tab/window" is unchecked. If checked, then uncheck.
 			27) Click "Save", and verify that "Your preferences have been saved." is shown.
-			28) Click "Main page". Type "Perfectionism" in search field, press ctrl+enter and verify that page appears in new tab/window.
+			28) Search for "FBI Ten Most Wanted Fugitives#External links" in the search field and click the first listed external link. Verify that it opens in the SAME tab/window.
+			29) Click "Gadgets" tab, check "Open external links in a new tab/window".
+			30) Click "Save", and verify that "Your preferences have been saved." is shown.
+			31) Search for "FBI Ten Most Wanted Fugitives#External links" in the search field and click the first listed external link. Verify that it opens in a new tab/window.
 			
+			32) Click "Gadgets" tab, verify that "Open search results in new tab/window when holding down the CTRL-key." is unchecked. If checked, then uncheck.
+			33) Click "Save", and verify that "Your preferences have been saved." is shown.
+			34) Click "Main page". Type "ISTQB" in search field, press ctrl+enter and verify that page appears in SAME tab/window.
 			
+			35) Click "Gadgets" tab, check "Open search results in new tab/window when holding down the CTRL-key.".
+			36) Click "Save", and verify that "Your preferences have been saved." is shown.
+			37) Click "Main page". Type "ISTQB" in search field, press ctrl+enter and verify that page appears in NEW tab/window.
+			
+			38) Click "Gadgets" tab, verify that "Display pages on your watchlist that have changed since your last visit in bold. See Customizing watchlists for more options.". If checked, then uncheck.
+			39) Click "Save", and verify that "Your preferences have been saved." is shown.
+			40) Click "Watchlist" and verify that the last edit on your talk page is not listed in bold.
+			41) Click "Gadgets" tab, check "Display pages on your watchlist that have changed since your last visit in bold. See Customizing watchlists for more options.".
+			42) Click "Save", and verify that "Your preferences have been saved." is shown.
+			43) Click "Watchlist" and verify that text "Pages that have been changed since you last visited them are shown in bold." is shown.
+			44) Click "Gadgets" tab, verify that "CharInsert, adds a toolbar under the edit window for quickly inserting wiki markup and special characters (troubles?)" is unchecked. If checked, then uncheck.
+			45) Click "Save", and verify that "Your preferences have been saved." is shown.
+			46) Click "Talk". Click "Edit source". Verify that there is NO bar under the multiline text field offering symbols such as Degrees, plusminus, crossproduct etc.
+			47) Click "Gadgets" tab, check "CharInsert, adds a toolbar under the edit window for quickly inserting wiki markup and special characters (troubles?)".
+			48) Click "Save", and verify that "Your preferences have been saved." is shown.
+			49) Click "Talk". Click "Edit source". Verify that there IS a bar under the multiline text field offering symbols such as Degrees, plusminus, crossproduct etc.
+			50) Click "Gadgets" tab, verify that "Display an assessment of an article's quality as part of the page header for each article. (documentation)" is unchecked. If checked, then uncheck.
+			51) Click "Save", and verify that "Your preferences have been saved." is shown.
+			52) Look up an article on Wikipedia, e.g. "1979 Coyote Lake earthquake". Make sure that in the line following the title there is no reference to words such as "*-class", "featured", "good", but solely consists of the wording "From Wikipedia, the free encyclopedia" in non-italic script. You can also see that the title should be black.
+			53) Click "Gadgets" tab, check "Display an assessment of an article's quality as part of the page header for each article. (documentation)".
+			54) Click "Save", and verify that "Your preferences have been saved." is shown.
+			55) Look up the previous article and verify that there is some quality-assessment near title (as described recently). 
+
 Expected result:	
 			(1)-(4): Text cursor is moved to search box.
 			(5)-(8): Text cursor is NOT moved to search box.
@@ -42,9 +80,18 @@ Expected result:
 			(12)-(14): Text cursor is in search box.
 			(15)-(16): GoogleTrans box does NOT appear.
 			(17)-(19): GoogleTrans box does appear.
-			(20)-(22): Article popup preview does appear.
-			(23)-(25): External link open in new tab/window.
-			(26)-(28): Search result opens in new tab/window.
+			(20)-(22): Article popup preview does NOT appear.
+			(23)-(25): Article popup preview does appear.
+			(26)-(28): External link opens in SAME tab/window.
+			(29)-(31): External link open in new tab/window.
+			(32)-(34): Search resukt opens in SAME tab/window.
+			(35)-(37): Search result opens in new tab/window.
+			(38)-(41): Last entry on talk page in watchlist does not appear in bold.
+			(42)-(44): Last entry on talk page in watchlist does appear in bold.
+			(45)-(47): Bar offering symbols when editing, not visible
+			(48)-(50): Bar offering symbols when editing, visible
+			(51)-(53): No quality-assessment near title of article.
+			(54)-(56): Quality-assessment near title of article.
 			
 Actual result:		
 			(1)-(4): Text cursor is moved to search box.
@@ -53,9 +100,18 @@ Actual result:
 			(12)-(14): Text cursor is in search box.
 			(15)-(16): GoogleTrans box does NOT appear.
 			(17)-(19): GoogleTrans box does appear.
-			(20)-(22): Article popup privew does appear.
-			(23)-(25): External link open in new tab/window.
-			(26)-(28): Search result opens in new tab/window.
+			(20)-(22): Article popup preview does NOT appear.
+			(23)-(25): Article popup preview does appear.
+			(26)-(28): External link opens in SAME tab/window.
+			(29)-(31): External link open in new tab/window.
+			(32)-(34): Search resukt opens in SAME tab/window.
+			(35)-(37): Search result opens in new tab/window.
+			(38)-(41): Last entry on talk page in watchlist does not appear in bold.
+			(42)-(44): Last entry on talk page in watchlist does appear in bold.
+			(45)-(47): Bar offering symbols when editing, not visible
+			(48)-(50): Bar offering symbols when editing, visible
+			(51)-(53): No quality-assessment near title of article.
+			(54)-(56): Quality-assessment near title of article.
 Pass/Fail:		
 			(1)-(4): PASS
 			(5)-(8): PASS
@@ -66,26 +122,72 @@ Pass/Fail:
 			(20)-(22): PASS
 			(23)-(25): PASS
 			(26)-(28): PASS
+			(29)-(31): PASS
+			(32)-(34): PASS
+			(35)-(37): PASS
+			(38)-(41): PASS
+			(42)-(44): PASS
+			(45)-(47): PASS
+			(48)-(50): PASS
+			(51)-(53): PASS
+			(54)-(56): PASS
+			
 Comment:		
 			Manual tests not done:
-				- "After rolling back an edit, automatically open the contributions of the user whose edit has been rolled back"
+				* "After rolling back an edit, automatically open the contributions of the user whose edit has been rolled back"
 					Will skip as we are not prepared to roll-back/undo Wikipedia contributions of other users.
-				- "ImageAnnotator, to view notes and comments that people have placed upon images shown on file description pages."
-					In my opinion: Not important to normal user.
-				- "Redirect image links to Commons for files that are hosted there"
-					In my opinion: Not important to normal user.
-				- "Print options gives you more control when printing content. Remove images or the background for instance."
-					In my opinion: Not important to normal user.
-				- "The revisionjumper creates an interface which allows you to jump between different revisions."
-					In my opinion: Not important to normal user.
-				- "Suppress display of fundraiser banners"
-					In my opinion: Not important to normal user.
-				- "Suppress display of all Central Notices"
-					In my opinion: Not important to normal user.
-				- ""Ask a question" feature for the Teahouse project"
-					In my opinion: Not important to normal user.
-				- "Reference Tooltips: Roll over any inline citation to see reference information, instead of having to jump away from the article text."
-					In my opinion: Not important to normal user.
-				- "FormWizard. A wizard for creating and expanding project pages."
-					In my opinion: Not important to normal user.
-				
+				* In my opinion not important to normal user:
+					- ImageAnnotator, to view notes and comments that people have placed upon images shown on file description pages.
+					- Redirect image links to Commons for files that are hosted there
+					- Print options gives you more control when printing content. Remove images or the background for instance.
+					- The revisionjumper creates an interface which allows you to jump between different revisions.
+					- Suppress display of fundraiser banners
+					- Suppress display of all Central Notices
+					- "Ask a question" feature for the Teahouse project
+					- Reference Tooltips: Roll over any inline citation to see reference information, instead of having to jump away from the article text.
+					- FormWizard. A wizard for creating and expanding project pages.
+					- Geonotice: Display notices on your watchlist about events in your region.
+					- Do not show green bullets for pages that have changed since your last visit, and hide the reset button.
+					- Add two new dropdown boxes below the edit summary box with some useful default summaries
+					- Citation expander: Automatically expand and format citations (uses "Citation bot").
+					- Syntax highlighter, make syntax stand out colorfully in the edit box. Works best in Firefox and works almost all of the time in Chrome and Opera.
+					- HotCat, easily add / remove / change a category on a page, with name suggestion [example]
+					- wikEdDiff, improved diff view between article versions (not needed if wikEd is used)
+					- ProveIt, a powerful GUI tool for viewing, editing, adding, and inserting references (screenshot, working demo)
+					- wikEd, a full-featured integrated text editor for Firefox, Safari, and Google Chrome. Please read the help page for usage instructions.
+					- Yet Another AFC Helper Script: easily review Articles for creation submissions, Files for Upload, redirect and category requests
+					- Form for filing disputes at the dispute resolution noticeboard
+					- refToolbar, adds a "cite" button to the editing toolbar for quick and easy addition of commonly used citation templates.
+				    - Add an [edit] link for the lead section of a page
+				    - Add a clock in the personal toolbar that displays the current time in UTC (which also provides a link to purge the current page).
+				    - Add a "Purge" option to the top of the page, which purges the page's cache when followed.
+				    - Add a selector to the Wikipedia search page allowing the use of external search engines.
+				    - Allow navigation menus to be collapsed.
+				    - Allow toggling between tabs and dropdown menus. (Please report bugs here.)
+				    - Add Page and User dropdown menus to the toolbar with links to common tasks, analytic tools and logs. Supports Vector (documentation), and Monobook / Modern skins (documentation)
+				    - Change the "new section" tab text to instead display the much narrower "+".
+				    - Change UTC-based times and dates, such as those used in signatures, to be relative to local time. (documentation)
+				    - Display diffs with the old yellow/green colors and design.
+				    - Disable animations in the interface.
+				    - Disable the suggestions dropdown-lists of the search fields
+				    - Disable smaller font sizes of elements such as Infoboxes, Navboxes and Reference lists.
+				    - Display a floating alert when I have new talk page messages
+				    - Justify Paragraphs.
+				    - Move section [edit] links to the right side of the screen.
+				    - PrettyLog gives the lists on Special:Log the same layout as on the Special:Search result pages. If the log shown contains file uploads, add small thumbnails (Documentation on Commons).
+				    - Show radio buttons to switch between views of certain content, such as some maps
+				    - SidebarTranslate, changes the language links in the sidebar so their text is displayed in English
+				    - Vector classic typography (use only sans-serif in Vector skin)
+				    - Widen the search box in the Vector skin.
+				    - Mark navigation links to featured (Monobook-bullet-star.png) and good (Monobook-bullet-ga.png) articles in other languages.
+					- DejaVu Sans, a font with support for various dingbats. This gadget works on Google Chrome, Mozilla Firefox 3.5, and Safari. Install this gadget if you need better font and character support but cannot install fonts directly onto your computer.
+					- The JavaScript Standard Library (JSL), a compatibility library for browsers that lack full support for JavaScript 1.6. This includes older versions of Internet Explorer (version 7 and below), Opera, and Safari.
+				    - Add a sidebar menu of user-defined regex tools, with a dynamic form for instant one-use regex (documentation).
+				    - Add a toolbox link to reload the current page with the system message names exposed.
+				    - Add a toolbox link to reload the current page with Resource Loader in debug mode.
+				    - Allow /16, /24 and /27 – /32 CIDR ranges on Special:Contributions forms (uses API), as well as wildcard prefix searches, e.g., "Splark*". (Please report any issues here.)
+				    - Enable tracking bugs on Phabricator using the {{tracked}} template.
+				    - Real-Time Recent Changes: Patrol recent changes (unpatrolled filter only works for new pages). See also m:User:Krinkle/RTRC-docs.
+				    - Mobile sidebar preview - Show page in mobile view while browsing the desktop site.
+				    - New image thumb design, and other related CSS tests (TOC, categories, etc.)
+				    - A three-month test of a more prominent link to the contributors of a page. Part of WikiProject Medicine.
