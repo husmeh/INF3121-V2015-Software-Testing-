@@ -59,10 +59,10 @@ trusted users approves changes.
 
 We can se that it’s possible to test for the positive and negative testing since we get error message when we
 try to put an invalid value in fields 8) - 12) it appears that only positive digits of specified value are legal. Otherwise
-it would be possible to enter any value that wouldn’t give sense for the user. Popups when entering invalid value e.g letters
+it would be possible to enter any value that wouldn’t give sense for the user. \textbf{\color{red}Popups when entering invalid value e.g letters
 or other characters dont give error but a popup that says only digits possible. This is a bit tricky to test in Selenium IDE this
 probably has something to do with the Javascript and the popups don't show up in Safari browser as popups but as an error message
-like the one's when we enter an invalid digit. But any way it's possible to test that the correct value is entered either if 
+like the one's when we enter an invalid digit.} But any way it's possible to test that the correct value is entered either if 
 it's a caracter or negative value it's not possible to make a change and wiki forces one to enter a correct value so this part
 is possible to test in Selenium IDE. Further we can se in the automated test using the command "assertHtmlSource" and set target
 to look for regex expressions to look for the specified elements work very good. This gives us an option to controll that 
@@ -79,13 +79,13 @@ it's more subjective what is more important for some normal user.
 
 We can se that it’s possible to test for the positive and negative testing since we get error message when we
 try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
-it would be possible to enter any value that wouldn’t give sense for the user. The reason of choosing “Hide my edits from the watchlist” in 			advanced options is because we can make Selenium IDE to go in to the HTML and CSS source file and specifie what to look for because the user 
-username is not a variable that changes like the variables in Watchlist options with that changes with time and are not possible to automate
+it would be possible to enter any value that wouldn’t give sense for the user. The reason of choosing “Hide my edits from the watchlist” in advanced options is because we can make Selenium IDE to go in to the HTML and CSS source file and specifie what to look for because the user 
+username is not a variable that changes like the variables in Watchlist. \textbf{\color{red}Options that changes with time and are not possible to automate
 Changes are variables that change and some times it can say “Below are the last 37 changes in the last 720 hours” another day it may say
-Below are the last 60 changes in the last 720 hours. SO it’s difficult to test a variable. You can also her use command 
+Below are the last 60 changes in the last 720 hours. SO it’s difficult to test a variable. You can also here use command 
 "assertHtmlSource" and regex expression but the proble is that it would find it first time and all the times there are no
 changes. But after a while it wouldn't work since the variable would change and the automated test wouldn't have any
-value anymore in this case. 
+value anymore in this case.} 
 Here is the same case as in the "Editing" when it comes to positive and negative testing. One important thing that
 we saw possible to test was "Hide my edits from the watchlist" under "Advanced options". Reason for testing this is that it's
 possible to automate it usig "assertHtmlSource" command in Selinium IDE. We can test that changes made by our user are visible 
@@ -100,16 +100,16 @@ with Selenium IDE.
 \section{Test Case: Notifications.file}
 
 This one seems to be difficult to automate due to the changes and email receiving to confirm that the changes are 
-are made witch makes it difficult to automate. Reason for this is this actions are relies of other people interacting with "Talk"
-and notifications which may be difficult to interpret with Selenium IDE and even with manual test. The problem here is that when we run
+are made witch makes it difficult to automate. Reason for this is that actions relies of other people interacting with "Talk"
+and "notifications" which may be difficult to interpret with Selenium IDE and even with manual test. The problem here is that when we run
 the other tests like Watchlist we need to go to Talk option and then the message indicator in the toolbar despair and it gives us an error
-because the test relies that the message is not red. So its possible to test but it may give som issues when running the whole test suite in
-specific order. If dropping to test watchlist before testing Notifications it may work just fine with the same technics as before
+because the test relies that the message is not red. \textbf{\color{red} So its possible to test but it may give som issues when running the whole test suite in
+specific order. If dropping to test "Watchlist" before testing Notifications it may work just fine with the same technics as before
 and specify the command and target using "assertHtmlSource" to begin with and then use  "assertNotHtmlSource" when there has been a
-notification and not been read. As mentioned before this one may fail and is not possible to automate with out failing many times.
-It works under special circumstances but we always ned a automated test that works no mather the circumstances. So the conclusion is
-this one fails to be automated to work 100%. 
-An automated test is suposed to work with out needing to thing of circumstances, und just being able to run them and perform the tasks.
+notification and not been read}. As mentioned before this one may fail and is not possible to automate with out failing many times.
+It works under special circumstances but we always ned a automated test that works no mather the circumstances. \textbf{\color{red}So the conclusion is
+this one fails to be automated to work 100\%. 
+An automated test is suposed to work with out needing to think of circumstances, and just being able to run them and perform the tasks.}
 
 
 
