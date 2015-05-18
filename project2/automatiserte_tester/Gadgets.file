@@ -11,6 +11,103 @@
 <thead>
 <tr><td rowspan="1" colspan="3">Gagdets</td></tr>
 </thead><tbody>
+<!--open external links in new NY negative-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpgadgets-exlinks</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>FBI Ten Most Wanted Fugitives#External links</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=FBI Top Ten Most Wanted Fugitives</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://www.fbi.gov/wanted/topten</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://en.wikipedia.org/</td>
+	<td></td>
+</tr>
+<!--open external links in new NY positive-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpgadgets-exlinks</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>FBI Ten Most Wanted Fugitives#External links</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=FBI Top Ten Most Wanted Fugitives</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>https://en.wikipedia.org/wiki/FBI_Ten_Most_Wanted_Fugitives#External_links</td>
+	<td></td>
+</tr>
 <!--watchlist: unseen edits not in bold-->
 <tr>
 	<td>clickAndWait</td>
@@ -252,7 +349,6 @@
 	<td>regexp:[\s\S](span class=&quot;assess-article-rating&quot;)[\s\S]</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

@@ -29,7 +29,7 @@ Even Langfeldt Friberg\footnote{\href{mailto:evenlf@student.matnat.uio.no}{\noli
 
 \maketitle
 
-\section{Test Case: CreateUserAccount.file}
+\section*{Test Case: 1 a Create Account}
 The value of \texttt{id=wpName2} is \textit{husven\_test3}, but since we already created this user when we performed the manual test, this username is 
 no longer unique. One could of course 
 change this value to something unique, but the automated test would still fail because the value of \texttt{id=wpCatchaWord} was \textit{aryanbusy} when we first 
@@ -38,14 +38,14 @@ interpreted the captcha, and this is completely unlikely to be the answer to a n
 One could probably make an automated test that copied the source of the captcha image, made use of an online decaptcha service, copied the computed captcha word 
 and pasted it into \texttt{id=wpCaptchaWord}, but we did not find such a service available freely.
 
-\section{Test Case: Recent\_Changes.file}
+\section*{Test Case: 5 Preferences: Recent changes}
 
-The tester couldn't automated step (8)-(10), which in the manual test case is negative testing to assure that giving invalid input (i.e. the word \texttt{fifteen} 
-instead of the positive integer \texttt{15}) to textfield (\textit{Number of edits to show in recent changes, page histories (...)}) should give an error. 
-There is an error given, but it's in the form of a JavaScript (?) coloring the textbox red and a popup message. The error message does not hinder the user to 
+The tester could not automate step (8)-(10), which in the manual test case is negative testing to assure that giving invalid input (i.e. the word \texttt{fifteen} 
+instead of the positive integer \texttt{15}) to textfield \textit{Number of edits to show in recent changes, page histories (...)} should give an error. 
+There is an error given, but it is in the form of a JavaScript action coloring the textbox red and a popup message. The error message does not hinder the user to 
 save.
 
-In the same manner we could not automate step (11)-(12) as giving invalid input (i.e. \texttt{-10}) to textfield (\textit{Number of edits to show in recent (...)}) 
+In the same manner we could not automate step (11)-(12) as giving invalid input (i.e. \texttt{-10}) to textfield \textit{Number of edits to show in recent (...)} 
 did not give an error what so ever, but accepted \texttt{-10} as input. Obviously \texttt{-10} was actually interpreted as \texttt{0}, which was confirmed if 
 one loaded the \textit{Recent changes} page after giving this input. This could be categorized as a low-importance bug in Wikipedia.
 
@@ -55,7 +55,7 @@ is subject to change fast, and I found it makes no sense to automatize this spec
 trusted users approves changes.
 
 
-\section{Test Case: Editing.file}
+\section*{Test Case: Editing.file}
 
 We can se that it’s possible to test for the positive and negative testing since we get error message when we
 try to put an invalid value in fields 8) - 12) it appears that only positive digits of specified value are legal. Otherwise
@@ -75,7 +75,7 @@ it's more subjective what is more important for some normal user.
 
 
 
-\section{Test Case: Watchlist.file}
+\section*{Test Case: Watchlist.file}
 
 We can se that it’s possible to test for the positive and negative testing since we get error message when we
 try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
@@ -97,7 +97,7 @@ We can also se that when we turned "Edit area font style" to "Serif font" under 
 with Selenium IDE.
 
 
-\section{Test Case: Notifications.file}
+\section*{Test Case: Notifications.file}
 
 This one seems to be difficult to automate due to the changes and email receiving to confirm that the changes are 
 are made witch makes it difficult to automate. Reason for this is that actions relies of other people interacting with "Talk"
@@ -112,7 +112,101 @@ this one fails to be automated to work 100\%.
 An automated test is suposed to work with out needing to think of circumstances, and just being able to run them and perform the tasks.}
 
 
+\section*{Test Case: 8 Preferences: Gadgets}
 
+\paragraph*{Failed to automate steps 1-8 -- Disable access keys:} I could not figure out the correct use of the \texttt{sendKeys} command, and therefore could not observe the text cursor being 
+moved to the search box.
+
+\paragraph*{Failed to automate steps 9-14 -- Focus cursor in search box:} I tried to make use of the \texttt{assertCursorPosition} command, but failed:
+
+\begin{verbatim}
+[info] Executing: |assertCursorPosition | id=searchInput | |
+[error] Actual value '0' did not match ''
+\end{verbatim}
+
+\paragraph*{Failed to automate steps 15-20 -- GoogleTrans popup:} I could not figure out the correct use of the \texttt{sendKeys} command and thus it was not 
+possible for the \texttt{mouseOver} command to give a popup. 
+
+\paragraph*{Failed to automate steps 21-26 -- Navigation popups:} I tried to automate with the following commands, but it failed. The \texttt{mouseOver} action did not lead to a 
+popup appearing.
+
+\begin{verbatim}
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpgadgets-Navigation_popups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Mike Tyson</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>link=American</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=popupData1</td>
+	<td></td>
+</tr>
+\end{verbatim}
+
+
+\paragraph{Remark regarding steps 27-29 and 30-32: [did automate]} I have a proposal for the automation, but we had no luck making use of the \texttt{selectWindow} or \texttt{selectPopUp} 
+commands in Selenium IDE, so the logic is that if new window/tab option is disabled, then the location of the current page after clicking the link will be
+\texttt{fbi.gov}, and not \texttt{wikipedia.org} (use of \texttt{assertLocation} command). Vice versa if the option is enabled.
+
+\paragraph{Failed to automate steps 33-38 -- Open search result in new window/tab when pressing CTRL:} I could not succeed in automating the \textit{open search result in new tab/window when pressing CTRL} option. I tried to 
+make use of the \texttt{sendKeys} and the \texttt{keyDown} commands, but neither worked as expected.
+
+\begin{verbatim}
+(...)
+
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>ISTQB</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchButton</td>
+	<td>${KEY_CTRL}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+
+(...)
+\end{verbatim}
 
 
 
