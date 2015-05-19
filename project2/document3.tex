@@ -68,7 +68,7 @@ is subject to change fast, and I found it makes no sense to automatize this spec
 trusted users approves changes.
 
 
-\section*{Test Case: Editing.file}
+\section*{Test Case: Editing.html}
 
 We can se that it’s possible to test for the positive and negative testing since we get error message when we
 try to put an invalid value in fields 8) - 12) it appears that only positive digits of specified value are legal. Otherwise
@@ -88,7 +88,7 @@ it's more subjective what is more important for some normal user.
 
 
 
-\section*{Test Case: Watchlist.file}
+\section*{Test Case: Watchlist.html}
 
 We can se that it’s possible to test for the positive and negative testing since we get error message when we
 try to put an invalid value in fields 2) - 7) it appears that only positive digits of specified value are legal. Otherwise
@@ -110,16 +110,18 @@ We can also se that when we turned "Edit area font style" to "Serif font" under 
 with Selenium IDE.
 
 
-\section*{Test Case: Notifications.file}
+\section*{Test Case: Notifications.html}
 
 This one seems to be difficult to automate due to the changes and email receiving to confirm that the changes are 
 are made witch makes it difficult to automate. Reason for this is that actions relies of other people interacting with "Talk"
 and "notifications" which may be difficult to interpret with Selenium IDE and even with manual test. The problem here is that when we run
 the other tests like Watchlist we need to go to Talk option and then the message indicator in the toolbar despair and it gives us an error
-because the test relies that the message is not red. \textbf{\color{red} So its possible to test but it may give som issues when running the whole test suite in
-specific order. If dropping to test "Watchlist" before testing Notifications it may work just fine with the same technics as before
-and specify the command and target using "assertHtmlSource" to begin with and then use  "assertNotHtmlSource" when there has been a
-notification and not been read}. As mentioned before this one may fail and is not possible to automate with out failing many times.
+because the test relies that the message is not red. \textbf{\color{red} The reason why this one may pass first time
+but not the second time and all other times after that is that. When some one edits our articles a red notification appears
+on top of the page. After the test is run the notifications disappears and the test will fail after the first time it's run.
+So this test fails to be a successful automated test for reuse, since it work just once. Here we use "assertHtmlSource" and 
+"assertNotHtmlSource" to controll that the red notification appears when we have a new notification and that it despairs 
+when we have read the notification }. As mentioned before this one may fail and is not possible to automate with out failing many times.
 It works under special circumstances but we always ned a automated test that works no mather the circumstances. \textbf{\color{red}So the conclusion is
 this one fails to be automated to work 100\%. 
 An automated test is suposed to work with out needing to think of circumstances, and just being able to run them and perform the tasks.}
