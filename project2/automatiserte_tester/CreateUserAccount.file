@@ -12,16 +12,6 @@
 <tr><td rowspan="1" colspan="3">CreateUserAccount</td></tr>
 </thead><tbody>
 <tr>
-	<td>open</td>
-	<td>/wiki/Main_Page</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Create account</td>
-	<td></td>
-</tr>
-<tr>
 	<td>type</td>
 	<td>id=wpName2</td>
 	<td>husven_test3</td>
@@ -47,11 +37,20 @@
 	<td></td>
 </tr>
 <tr>
+	<td>open</td>
+	<td>/wiki/Main_Page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Create account</td>
+	<td></td>
+</tr>
+<tr>
 	<td>assertTitle</td>
 	<td>Wikipedia, the free encyclopedia</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
