@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://en.wikipedia.org/" />
+<title>Preferences_FromPNGtoTEX</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Preferences_FromPNGtoTEX</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/wiki/Main_Page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-rendering</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mw-input-wpmath-3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Newton's laws of motion</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=dd &gt; span.mwe-math-fallback-source-inline.tex</td>
+	<td>$ \sum {\mathbf {F}}=0\;\Leftrightarrow \;{\frac {{\mathrm {d}}{\mathbf {v}}}{{\mathrm {d}}t}}=0. $</td>
+</tr>
+</tbody></table>
+</body>
+</html>

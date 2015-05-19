@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://en.wikipedia.org/" />
+<title>Gagdets</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Gagdets</td></tr>
+</thead><tbody>
+<!--open external links in new NY negative-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpgadgets-exlinks</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>FBI Ten Most Wanted Fugitives#External links</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=FBI Top Ten Most Wanted Fugitives</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://www.fbi.gov/wanted/topten</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://en.wikipedia.org/</td>
+	<td></td>
+</tr>
+<!--open external links in new NY positive-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpgadgets-exlinks</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>FBI Ten Most Wanted Fugitives#External links</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=FBI Top Ten Most Wanted Fugitives</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>https://en.wikipedia.org/wiki/FBI_Ten_Most_Wanted_Fugitives#External_links</td>
+	<td></td>
+</tr>
+<!--watchlist: unseen edits not in bold-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpgadgets-WatchlistChangesBold</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a[title=&quot;The list of pages you are monitoring for changes [⌃⌥L]&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>id=mw-wlheader-showupdated</td>
+	<td>Pages that have been changed since you last visited them are shown in bold.</td>
+</tr>
+<!--watchlist: unseen edits in bold-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpgadgets-WatchlistChangesBold</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a[title=&quot;The list of pages you are monitoring for changes [⌃⌥L]&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=mw-wlheader-showupdated</td>
+	<td>Pages that have been changed since you last visited them are shown in bold.</td>
+</tr>
+<!--charInsert: not active-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpgadgets-charinsert</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Talk</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>id=editpage-specialchars</td>
+	<td>InsertWiki markupSymbolsLatinGreekCyrillicHebrewArabicIPA (English)IPAMath and logic&nbsp;&nbsp;– — ° ′ ″ ≈ ≠ ≤ ≥ ± − × ÷ ← → · §&nbsp;&nbsp;&nbsp;Sign your posts on talk pages: ~~~~&nbsp;&nbsp;&nbsp;Cite your sources: &lt;ref&gt;&lt;/ref&gt;</td>
+</tr>
+<!--charInsert: active-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpgadgets-charinsert</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Talk</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=editpage-specialchars</td>
+	<td>InsertWiki markupSymbolsLatinGreekCyrillicHebrewArabicIPA (English)IPAMath and logic&nbsp;&nbsp;– — ° ′ ″ ≈ ≠ ≤ ≥ ± − × ÷ ← → · §&nbsp;&nbsp;&nbsp;Sign your posts on talk pages: ~~~~&nbsp;&nbsp;&nbsp;Cite your sources: &lt;ref&gt;&lt;/ref&gt;</td>
+</tr>
+<!--quality assessment deactive-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpgadgets-metadata</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>1979 Coyote Lake earthquake</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotHtmlSource</td>
+	<td>regexp:[\s\S](span class=&quot;assess-article-rating&quot;)[\s\S]</td>
+	<td></td>
+</tr>
+<!--quality assessment active-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-gadgets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpgadgets-metadata</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>1979 Coyote Lake earthquake</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertHtmlSource</td>
+	<td>regexp:[\s\S](span class=&quot;assess-article-rating&quot;)[\s\S]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
