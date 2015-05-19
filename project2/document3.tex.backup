@@ -25,11 +25,24 @@ Even Langfeldt Friberg\footnote{\href{mailto:evenlf@student.matnat.uio.no}{\noli
 \and Husein Mehmedagic\footnote{\href{mailto:huseinm@student.matnat.uio.no}{\nolinkurl{huseinm@student.matnat.uio.no}}.}
 }
 
+
+
 \begin{document}
 
 \maketitle
 
+\renewcommand{\abstractname}{Please note.}
+\begin{abstract}
+The automation was done with the Selenium IDE plugin for Firefox under OS X. Please see the last chapter of this document for more details.
+\end{abstract}
+
 \section*{Test Case: 1 a Create Account}
+
+The value of \texttt{id=wpName2} is \textit{husven}, but another user had already created this user before us, so even the manual test failed. There is no 
+indication given if a chosen username is taken while registering, you have to click the \texttt{Create this account} button to be aware of that. Additionally, 
+what is said in the next case (1 b) also applies here, making it difficult/impossible to automate.
+
+\section*{Test Case: 1 b Create Account}
 The value of \texttt{id=wpName2} is \textit{husven\_test3}, but since we already created this user when we performed the manual test, this username is 
 no longer unique. One could of course 
 change this value to something unique, but the automated test would still fail because the value of \texttt{id=wpCatchaWord} was \textit{aryanbusy} when we first 
@@ -124,7 +137,10 @@ moved to the search box.
 [error] Actual value '0' did not match ''
 \end{verbatim}
 
-\paragraph*{Failed to automate steps 21-26:} I tried to automate with the following commands, but it failed. The \texttt{mouseOver} action did lead to a 
+\paragraph*{Failed to automate steps 15-20 -- GoogleTrans popup:} I could not figure out the correct use of the \texttt{sendKeys} command and thus it was not 
+possible for the \texttt{mouseOver} command to give a popup. 
+
+\paragraph*{Failed to automate steps 21-26 -- Navigation popups:} I tried to automate with the following commands, but it failed. The \texttt{mouseOver} action did not lead to a 
 popup appearing.
 
 \begin{verbatim}
@@ -180,7 +196,7 @@ popup appearing.
 commands in Selenium IDE, so the logic is that if new window/tab option is disabled, then the location of the current page after clicking the link will be
 \texttt{fbi.gov}, and not \texttt{wikipedia.org} (use of \texttt{assertLocation} command). Vice versa if the option is enabled.
 
-\paragraph{Failed to automate steps 33-38:} I could not succeed in automating the \textit{open search result in new tab/window when pressing CTRL} option. I tried to 
+\paragraph{Failed to automate steps 33-38 -- Open search result in new window/tab when pressing CTRL:} I could not succeed in automating the \textit{open search result in new tab/window when pressing CTRL} option. I tried to 
 make use of the \texttt{sendKeys} and the \texttt{keyDown} commands, but neither worked as expected.
 
 \begin{verbatim}
@@ -205,22 +221,45 @@ make use of the \texttt{sendKeys} and the \texttt{keyDown} commands, but neither
 (...)
 \end{verbatim}
 
+\section*{Please note}
 
+We finally managed to run all automated tests in Selenium IDE on Firefox under OS X (see attached screenshot). However, the Wikipedia page seems to detect what OS
+the user is running as some labels differ in different environments. This is an issue when loading the developed test suite in for instance Firefox under Ubuntu. Specifically one would need 
+to find and replace all occurrences of 
 
+\begin{verbatim}
+	<td>clickAndWait</td>
+	<td>css=a[title=&quot;The list of pages you are monitoring for changes [\⌃\⌥L]&quot;]</td>
+	<td></td>
+\end{verbatim}
 
+with
 
+\begin{verbatim}
+	<td>clickAndWait</td>
+	<td>css=a[title="The list of pages you are monitoring for changes [Alt+Skift+L]"]</td>
+	<td></td>
+\end{verbatim}
 
+and, likewise replace
 
+\begin{verbatim}
+	<td>clickAndWait</td>
+	<td>css=a[title=&quot;A list of recent changes in the wiki [⌃⌥r]&quot;]</td>
+	<td></td>
+\end{verbatim}
 
+with
 
+\begin{verbatim}
+	<td>clickAndWait</td>
+	<td>link=Recent changes</td>
+	<td></td>
+\end{verbatim}
 
-
-
-
-
-
-
-
+These changes currently would need to be done in (\texttt{file:linenumber}) \texttt{Gadgets.html:143-145}, \texttt{Gadgets.html:179-181}, \texttt{Recent\_Changes.html:55-57}, 
+\texttt{Recent\_Changes.html:100-102}, \texttt{Recent\_Changes.html:140-142}, \texttt{Recent\_Changes.html:175-177}, \texttt{Watchlist.html:20-22} and \texttt{Watchlist.html:110-112}.
+\footnote{bash command \texttt{find . -name '*.html' | xargs grep -i -n 'css.*changes'}}
 
 
 
