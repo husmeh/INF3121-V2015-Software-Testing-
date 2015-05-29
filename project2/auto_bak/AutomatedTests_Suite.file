@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="Login_UserTrue_PassFalse.html">Login_UserTrue_PassFalse</a></td></tr>
+<tr><td><a href="Login_UserTrue_PassTrue.html">Login_UserTrue_PassTrue</a></td></tr>
+<tr><td><a href="Preferences_ChangeToNorwegian.html">Preferences_ChangeToNorwegian</a></td></tr>
+<tr><td><a href="Preferences_ChangeToEnglish.html">Preferences_ChangeToEnglish</a></td></tr>
+<tr><td><a href="Preferences_FromPNGtoTEX.html">Preferences_FromPNGtoTEX</a></td></tr>
+<tr><td><a href="Preferences_DateFormat.html">Preferences_DateFormat</a></td></tr>
+<tr><td><a href="Preferences_AddEmail.html">Preferences_AddEmail</a></td></tr>
+<tr><td><a href="Preferences_ChangePassword.html">Preferences_ChangePassword</a></td></tr>
+<tr><td><a href="Editing.html">Editing</a></td></tr>
+<tr><td><a href="Recent_Changes.html">Recent_Changes</a></td></tr>
+<tr><td><a href="Notifications.html">Notifications</a></td></tr>
+<tr><td><a href="Watchlist.html">Watchlist</a></td></tr>
+<tr><td><a href="Gadgets.html">Gadgets</a></td></tr>
+<tr><td><a href="Beta.html">Beta</a></td></tr>
+<tr><td><a href="Logout.html">Logout</a></td></tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://en.wikipedia.org/" />
+<title>Beta</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Beta</td></tr>
+</thead><tbody>
+<!--hovercard positive-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wppopups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>link=Nordic region</td>
+	<td>Nordic region</td>
+</tr>
+<tr>
+	<td>assertHtmlSource</td>
+	<td>regexp:[\s\S]mwe-popups-svg[\s\S]</td>
+	<td></td>
+</tr>
+<!--hovercard negative-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wppopups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>link=Nordic region</td>
+	<td>Nordic region</td>
+</tr>
+<tr>
+	<td>assertNotHtmlSource</td>
+	<td>regexp:[\s\S]mwe-popups-svg[\s\S]</td>
+	<td></td>
+</tr>
+<!--visualeditor positive-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpvisualeditor-enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Edit source</td>
+	<td>Edit source</td>
+</tr>
+<!--visualeditor negative-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpvisualeditor-enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>link=Edit source</td>
+	<td>Edit source</td>
+</tr>
+<!--compact language links positive-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpuls-compact-links</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertHtmlSource</td>
+	<td>regexp:[\s\S]&lt;button class=&quot;mw-interlanguage-selector mw-ui-button active&quot;&gt;171 more&lt;/button&gt;[\s\S]</td>
+	<td></td>
+</tr>
+<!--compact language links negative-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpuls-compact-links</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotHtmlSource</td>
+	<td>regexp:[\s\S]&lt;button class=&quot;mw-interlanguage-selector mw-ui-button active&quot;&gt;171 more&lt;/button&gt;[\s\S]</td>
+	<td></td>
+</tr>
+<!--other projects sidebar positive-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=mw-input-wpwikibase-otherprojects</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=p-wikibase-otherprojects-label</td>
+	<td>Other projects</td>
+</tr>
+<!--other projects sidebar negative-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Preferences</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=preftab-betafeatures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=mw-input-wpwikibase-otherprojects</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=prefcontrol</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.successbox &gt; p</td>
+	<td>Your preferences have been saved.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchInput</td>
+	<td>Stockholm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>id=p-wikibase-otherprojects-label</td>
+	<td>Other projects</td>
+</tr>
+</tbody></table>
+</body>
+</html>
